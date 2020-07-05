@@ -3012,7 +3012,7 @@ input[type="submit"].form-control:focus {
 
 .section-flat .section-content {
     width: 100%;
-    padding: 130px 0 130px;
+    padding: 100px 0px 0px 0px;
     position: relative;
     clear: both;
 }
@@ -3129,7 +3129,7 @@ input[type="submit"].form-control:focus {
     overflow: hidden;
     position: relative;
     display: block;
-    height: 330px;
+    height: 200px;
     border-radius: 4px;
     background: no-repeat center / cover;
     background-color: #ddd;
@@ -6161,16 +6161,13 @@ table tbody td:first-child {
     }
 }
 
-.list-info.list-1 li::before {
-    background: url(../images/files/list-bullet-1.png) center no-repeat;
-}
-
-.list-info.list-2 li::before {
-    background: url(../images/files/list-bullet-2.png) center no-repeat;
-}
-
 /*  [ 04 ] - About Us
 =========================== */
+
+#our-works {
+    background-color: #f6f6f6;
+}
+
 #about-us {
     background-color: #f6f6f6;
 }
@@ -7379,7 +7376,7 @@ table tbody td:first-child {
 ========================== */
 /* Footer Bar */
 .footer-bar {
-    padding: 100px 0;
+    padding: 20px 0 20px 0;
     background: transparent;
 }
 
