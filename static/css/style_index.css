@@ -5723,7 +5723,8 @@ table tbody td:first-child {
 }
 
 .slick-dotted .slick-dots li.slick-active button {
-    background-color: #0166fd;
+    background-color: #ea221d;
+    display: none;
 }
 
 /* Slick Arrows */
