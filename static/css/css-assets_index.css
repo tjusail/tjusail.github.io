@@ -26,7 +26,7 @@
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 @import url(../font/fontawesome_page3/css/all.css);
-@import "https://use.fontawesome.com/releases/v5.3.1/css/v4-shims.css";
+/*@import "https://use.fontawesome.com/releases/v5.3.1/css/v4-shims.css";*/
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
