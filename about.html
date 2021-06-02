@@ -263,7 +263,7 @@
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script>
     var data;
-    axios.get('http://127.0.0.1:1024/api/teacher/2')
+    axios.get('http://lab.liebes.top/api/teacher/1')
         .then(response => (data = response.data)).then(function () {
         console.log(data);
     });
@@ -287,7 +287,7 @@
             }
         },
         mounted() {
-            axios.get('http://127.0.0.1:1024/api/teacher/2')
+            axios.get('http://lab.liebes.top/api/teacher/2')
                 .then(response => (this.info = response.data))
         }
     })
