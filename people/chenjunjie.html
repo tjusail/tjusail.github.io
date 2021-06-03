@@ -4,7 +4,7 @@
     <!-- Mobile Specific Meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Favicon-->
-    <link rel="shortcut icon" href="img/fav.png">
+    <link rel="shortcut icon" href="../img/fav.png">
     <!-- Author Meta -->
     <meta name="author" content="colorlib">
     <!-- Meta Description -->
@@ -20,26 +20,26 @@
     <!--
     CSS
     ============================================= -->
-    <link rel="stylesheet" href="css/linearicons.css">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
-    <link rel="stylesheet" href="css/jquery-ui.css">
-    <link rel="stylesheet" href="css/nice-select.css">
-    <link rel="stylesheet" href="css/animate.min.css">
-    <link rel="stylesheet" href="css/owl.carousel.css">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="../css/linearicons.css">
+    <link rel="stylesheet" href="../css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/magnific-popup.css">
+    <link rel="stylesheet" href="../css/jquery-ui.css">
+    <link rel="stylesheet" href="../css/nice-select.css">
+    <link rel="stylesheet" href="../css/animate.min.css">
+    <link rel="stylesheet" href="../css/owl.carousel.css">
+    <link rel="stylesheet" href="../css/main.css">
 </head>
 <body>
 <header id="header">
     <div class="container main-menu">
         <div class="row align-items-center justify-content-between d-flex">
             <div id="logo">
-                <a href="index.html"><img src="img/logo.png" alt="" title=""/></a>
+                <a href="../index.html"><img src="../img/logo.png" alt="" title=""/></a>
             </div>
             <nav id="nav-menu-container">
                 <ul class="nav-menu">
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="../index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="services.html">Services</a></li>
                     <li><a href="portfolio.html">Portfolio</a></li>
@@ -61,7 +61,7 @@
                             </li>
                         </ul>
                     </li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
                 </ul>
             </nav><!-- #nav-menu-container -->
         </div>
@@ -89,7 +89,7 @@
         <div class="container">
             <div class="row align-items-center justify-content-between">
                 <div class="col-lg-6 col-md-6 home-about-left">
-                    <img class="img-fluid" src="img/chen.jpeg" alt="">
+                    <img class="img-fluid" src="../img/chen.jpeg" alt="">
                 </div>
                 <div class="col-lg-5 col-md-6 home-about-right">
                     <h1 class="text-uppercase">{{ info.english_name }}({{ info.name }})</h1>
@@ -113,6 +113,7 @@
                     <div class="menu-content pb-70 col-lg-10">
                         <div class="title text-center">
                             <h1 class="mb-10">{{ module.name }}</h1>
+                            
                             <p></p>
                         </div>
                         <div class="">
@@ -124,7 +125,7 @@
                                     <span style="color: #8490ff; padding-left: 5px" v-if="submodule.addContent[4]">{{ submodule.addContent[4] }}</span>
                                     <span class="float-right" style="color: #8490ff" v-if="submodule.addContent[1]">{{ submodule.addContent[1] }}</span>
                                     <p style="padding-bottom: 0; margin-bottom: 0" v-if="submodule.content">
-                                        <em>{{ submodule.content }}</em>
+                                        {{ submodule.content }}
                                     </p>
                                     <p style="color: #777777; padding-bottom: 0; margin-bottom: 0" class="comment" v-if="submodule.addContent[2]">
                                         In.&nbsp {{ submodule.addContent[2] }}
