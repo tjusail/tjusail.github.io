@@ -90,7 +90,7 @@
         <div class="container">
             <div class="row align-items-center justify-content-between">
                 <div class="col-lg-6 col-md-12 home-about-left">
-                    <img class="img-fluid" src="../img/chen.jpeg" alt="">
+                    <img class="img-fluid" v-bind:src="info.profile_image" alt="">
                 </div>
                 <div class="col-lg-5 col-md-12 home-about-right text-justify">
 <!--                    <h1 class="text-uppercase">{{ info.english_name }}({{ info.name }})</h1>-->
@@ -304,6 +304,7 @@
                     'institution': '',
                     'intro': '',
                     'school': '',
+                    'profile_image': '',
                     'modules': [],
 
                 }
