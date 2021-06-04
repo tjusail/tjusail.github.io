@@ -40,9 +40,12 @@
             <nav id="nav-menu-container">
                 <ul class="nav-menu">
                     <li><a href="../index.html">Home</a></li>
-                    <li><a href="#Education">Experience</a></li>
+                    <li><a href="#Working Experience">Experience</a></li>
+                    <li><a href="#Professional Services">Services</a></li>
+                    <li><a href="#Projects">Projects</a></li>
+                    <li><a href="#Honors and Awards">Honors & Awards</a></li>
                     <li><a href="#Conference">Publications</a></li>
-                    <li><a href="#Academic Services">Services & Awards</a></li>
+                    <li><a href="#Teaching">Teaching</a></li>
                 </ul>
             </nav><!-- #nav-menu-container -->
         </div>
@@ -249,7 +252,7 @@
             }
         },
         mounted() {
-            axios.get('http://lab.liebes.top/api/teacher/2')
+            axios.get('http://lab.liebes.top/api/teacher/3')
                 .then(response => {
                     this.info = parse_data(response.data)
                 })
