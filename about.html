@@ -118,17 +118,23 @@
                         <div class="">
                             <ul class="unordered-list">
                                 <li v-for="submodule of module.submodules" style="margin-bottom: 10px">
-                                    <span style="color: #8490ff; padding-right: 5px" v-if="submodule.addContent[0]">{{ submodule.addContent[0] }}</span>
+                                    <span style="color: #8490ff; padding-right: 5px"
+                                          v-if="submodule.addContent[0]">{{ submodule.addContent[0] }}</span>
                                     <b style="color: #303030; font-weight: bold">{{submodule.title}}</b>
-<!--                                    <a style="color: #777777; padding-left: 5px" v-if="submodule.attaches[0]" v-bind:href="submodule.attaches[0]">[pdf]</a>-->
-                                    <span style="color: #8490ff; padding-left: 5px" v-if="submodule.addContent[4]">{{ submodule.addContent[4] }}</span>
-                                    <span class="float-right" style="color: #8490ff" v-if="submodule.addContent[1]">{{ submodule.addContent[1] }}</span>
-                                    <p style="padding-bottom: 0; margin-bottom: 0" v-if="submodule.content">
-                                        <em>{{ submodule.content }}</em>
+                                    <!--                                    <a style="color: #777777; padding-left: 5px" v-if="submodule.attaches[0]" v-bind:href="submodule.attaches[0]">[pdf]</a>-->
+                                    <span style="color: #8490ff; padding-left: 5px"
+                                          v-if="submodule.addContent[4]">{{ submodule.addContent[4] }}</span>
+                                    <span class="float-right" style="color: #8490ff"
+                                          v-if="submodule.addContent[1]">{{ submodule.addContent[1] }}</span>
+                                    <p style="padding-bottom: 0; margin-bottom: 0" v-if="submodule.content"
+                                       v-html="submodule.content">
+                                        <!--                                        <em>{{ submodule.content }}</em>-->
                                     </p>
-                                    <p style="color: #777777; padding-bottom: 0; margin-bottom: 0" class="comment" v-if="submodule.addContent[2]">
+                                    <p style="color: #777777; padding-bottom: 0; margin-bottom: 0" class="comment"
+                                       v-if="submodule.addContent[2]">
                                         In.&nbsp {{ submodule.addContent[2] }}
-                                        <b style="color: #ff0000; font-weight: bold" v-if="submodule.addContent[3]">  {{ submodule.addContent[3] }} </b>
+                                        <b style="color: #ff0000; font-weight: bold" v-if="submodule.addContent[3]">
+                                            {{ submodule.addContent[3] }} </b>
                                     </p>
                                 </li>
                             </ul>
@@ -267,7 +273,28 @@
         .then(response => (data = response.data)).then(function () {
         console.log(data);
     });
-
+    var parse_data = function(data){
+        for(var i = 0; i < data.modules.length; i ++){
+            var module = data.modules[i];
+            for(var j = 0; j < module.submodules.length; j ++){
+                console.log(module.submodules[j]);
+                var content = module.submodules[j].content;
+                if(content !== null && content.includes(data.english_name)){
+                    var s = data.english_name;
+                    var t = '<b style="color: #0b0b0b; font-weight: bold">' + s + '</b>';
+                    if(content.includes(s + '*')){
+                        s = s  + '*';
+                        t = '<b style="color: #0b0b0b; font-weight: bold">' + s + '</b>';
+                    }
+                    content = content.replace(s, t);
+                    // content = '<em>' + content + '</em>';
+                    data.modules[i].submodules[j].content = content;
+                }
+                console.log(content);
+            }
+        }
+        return data
+    }
     new Vue({
         el: '#container',
         data() {
@@ -287,9 +314,12 @@
             }
         },
         mounted() {
-            axios.get('http://lab.liebes.top/api/teacher/2')
-                .then(response => (this.info = response.data))
+            axios.get('http://127.0.0.1:1024/api/teacher/2')
+                .then(response => {
+                    this.info = parse_data(response.data)
+                })
         }
+
     })
 </script>
 
