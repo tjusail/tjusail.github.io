@@ -4,7 +4,7 @@
     <!-- Mobile Specific Meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Favicon-->
-    <link rel="shortcut icon" href="img/fav.png">
+    <link rel="shortcut icon" href="../img/fav.png">
     <!-- Author Meta -->
     <meta name="author" content="colorlib">
     <!-- Meta Description -->
@@ -20,26 +20,26 @@
     <!--
     CSS
     ============================================= -->
-    <link rel="stylesheet" href="css/linearicons.css">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
-    <link rel="stylesheet" href="css/jquery-ui.css">
-    <link rel="stylesheet" href="css/nice-select.css">
-    <link rel="stylesheet" href="css/animate.min.css">
-    <link rel="stylesheet" href="css/owl.carousel.css">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="../css/linearicons.css">
+    <link rel="stylesheet" href="../css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/magnific-popup.css">
+    <link rel="stylesheet" href="../css/jquery-ui.css">
+    <link rel="stylesheet" href="../css/nice-select.css">
+    <link rel="stylesheet" href="../css/animate.min.css">
+    <link rel="stylesheet" href="../css/owl.carousel.css">
+    <link rel="stylesheet" href="../css/main.css">
 </head>
 <body>
 <header id="header">
     <div class="container main-menu">
         <div class="row align-items-center justify-content-between d-flex">
             <div id="logo">
-                <a href="index.html"><img src="img/logo.png" alt="" title=""/></a>
+                <a href="../index.html"><img src="../img/logo.png" alt="" title=""/></a>
             </div>
             <nav id="nav-menu-container">
                 <ul class="nav-menu">
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="../index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="services.html">Services</a></li>
                     <li><a href="portfolio.html">Portfolio</a></li>
@@ -61,7 +61,7 @@
                             </li>
                         </ul>
                     </li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
                 </ul>
             </nav><!-- #nav-menu-container -->
         </div>
@@ -75,9 +75,10 @@
             <div class="row d-flex align-items-center justify-content-center">
                 <div class="about-content col-lg-12">
                     <h1 class="text-white">
-                        About Me
+                        {{ info.english_name }}({{ info.name }})
                     </h1>
-                    <p class="text-white">The man with a lot of hair.</p>
+                    <h4  class="text-white">{{ info.institution }}, {{ info.school }}</h4>
+<!--                    <p class="text-white">The man with a lot of hair.</p>-->
                 </div>
             </div>
         </div>
@@ -88,13 +89,12 @@
     <section class="home-about-area section-gap">
         <div class="container">
             <div class="row align-items-center justify-content-between">
-                <div class="col-lg-6 col-md-6 home-about-left">
-                    <img class="img-fluid" src="img/chen.jpeg" alt="">
+                <div class="col-lg-6 col-md-12 home-about-left">
+                    <img class="img-fluid" src="../img/chen.jpeg" alt="">
                 </div>
-                <div class="col-lg-5 col-md-6 home-about-right">
-                    <h1 class="text-uppercase">{{ info.english_name }}({{ info.name }})</h1>
-                    <h4 class="pb-1">{{ info.institution }}</h4>
-                    <h4 class="pb-1">{{ info.school }}</h4>
+                <div class="col-lg-5 col-md-12 home-about-right text-justify">
+<!--                    <h1 class="text-uppercase">{{ info.english_name }}({{ info.name }})</h1>-->
+
                     <h5 class="pb-1" style="color: #777777">{{ info.address }}</h5>
                     <h5 class="pb-2" style="color: #777777">{{ info.email }}</h5>
                     <p>
@@ -113,6 +113,7 @@
                     <div class="menu-content pb-70 col-lg-10">
                         <div class="title text-center">
                             <h1 class="mb-10">{{ module.name }}</h1>
+                            
                             <p></p>
                         </div>
                         <div class="">
@@ -268,11 +269,6 @@
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script>
-    var data;
-    axios.get('http://lab.liebes.top/api/teacher/1')
-        .then(response => (data = response.data)).then(function () {
-        console.log(data);
-    });
     var parse_data = function(data){
         for(var i = 0; i < data.modules.length; i ++){
             var module = data.modules[i];
@@ -314,7 +310,7 @@
             }
         },
         mounted() {
-            axios.get('http://127.0.0.1:1024/api/teacher/2')
+            axios.get('http://lab.liebes.top/api/teacher/2')
                 .then(response => {
                     this.info = parse_data(response.data)
                 })
