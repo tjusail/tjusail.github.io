@@ -24,7 +24,6 @@
     <link rel="stylesheet" href="../css/font-awesome.min.css">
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="../css/magnific-popup.css">
-    <link rel="stylesheet" href="../css/jquery-ui.css">
     <link rel="stylesheet" href="../css/nice-select.css">
     <link rel="stylesheet" href="../css/animate.min.css">
     <link rel="stylesheet" href="../css/owl.carousel.css">
@@ -92,7 +91,7 @@
         </div>
     </section>
     <template v-for="(module, index) of info.modules">
-        <section v-bind:id="module.name" class="section-gap"
+        <section v-bind:id="module.module_id" class="section-gap"
                  v-bind:class="{'testimonial-area' : index % 2 === 0,  'home-about-area' : index % 2 === 1}">
             <div class="container">
                 <div class="row d-flex justify-content-center">
@@ -212,6 +211,7 @@
     var parse_data = function(data){
         for(var i = 0; i < data.modules.length; i ++){
             var module = data.modules[i];
+            module.module_id = module.name.trim().replace(/[\s\/]/g, "-");
             for(var j = 0; j < module.submodules.length; j ++){
                 // console.log(module.submodules[j]);
                 var content = module.submodules[j].content;
