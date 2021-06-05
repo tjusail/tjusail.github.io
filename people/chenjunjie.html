@@ -117,11 +117,13 @@
                                         <!--                                        <em>{{ submodule.content }}</em>-->
                                     </p>
                                     <p style="color: #777777; padding-bottom: 0; margin-bottom: 0" class="comment"
-                                       v-if="submodule.addContent[2]">
-                                        In.&nbsp {{ submodule.addContent[2] }}
-                                        <b style="color: #ff0000; font-weight: bold" v-if="submodule.addContent[3]">
-                                            {{ submodule.addContent[3] }} </b>
+                                       v-if="submodule.addContent[2]" v-html="'In.&nbsp' + submodule.addContent[2]">
+<!--                                         {{ submodule.addContent[2] }}-->
+
                                     </p>
+                                    <p> <b style="color: #ff0000; font-weight: bold" v-if="submodule.addContent[3]">
+                                        {{ submodule.addContent[3] }} </b></p>
+
                                 </li>
                             </ul>
                         </div>
