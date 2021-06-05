@@ -146,29 +146,29 @@
 
 
     <!-- Start brands Area -->
-    <section class="brands-area">
-        <div class="container">
-            <div class="brand-wrap">
-                <div class="row align-items-center active-brand-carusel justify-content-start no-gutters">
-                    <div class="col single-brand">
-                        <a href="#"><img class="mx-auto" src="img/l1.png" alt=""></a>
-                    </div>
-                    <div class="col single-brand">
-                        <a href="#"><img class="mx-auto" src="img/l2.png" alt=""></a>
-                    </div>
-                    <div class="col single-brand">
-                        <a href="#"><img class="mx-auto" src="img/l3.png" alt=""></a>
-                    </div>
-                    <div class="col single-brand">
-                        <a href="#"><img class="mx-auto" src="img/l4.png" alt=""></a>
-                    </div>
-                    <div class="col single-brand">
-                        <a href="#"><img class="mx-auto" src="img/l5.png" alt=""></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<!--    <section class="brands-area">-->
+<!--        <div class="container">-->
+<!--            <div class="brand-wrap">-->
+<!--                <div class="row align-items-center active-brand-carusel justify-content-start no-gutters">-->
+<!--                    <div class="col single-brand">-->
+<!--                        <a href="#"><img class="mx-auto" src="img/l1.png" alt=""></a>-->
+<!--                    </div>-->
+<!--                    <div class="col single-brand">-->
+<!--                        <a href="#"><img class="mx-auto" src="img/l2.png" alt=""></a>-->
+<!--                    </div>-->
+<!--                    <div class="col single-brand">-->
+<!--                        <a href="#"><img class="mx-auto" src="img/l3.png" alt=""></a>-->
+<!--                    </div>-->
+<!--                    <div class="col single-brand">-->
+<!--                        <a href="#"><img class="mx-auto" src="img/l4.png" alt=""></a>-->
+<!--                    </div>-->
+<!--                    <div class="col single-brand">-->
+<!--                        <a href="#"><img class="mx-auto" src="img/l5.png" alt=""></a>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </section>-->
     <!-- End brands Area -->
 </div>
 
@@ -205,14 +205,15 @@
 <script src="../js/mail-script.js"></script>
 <script src="../js/main.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<!--<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>-->
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script>
     var parse_data = function(data){
         for(var i = 0; i < data.modules.length; i ++){
             var module = data.modules[i];
             for(var j = 0; j < module.submodules.length; j ++){
-                console.log(module.submodules[j]);
+                // console.log(module.submodules[j]);
                 var content = module.submodules[j].content;
                 if(content !== null && content.includes(data.english_name)){
                     var s = data.english_name;
@@ -225,7 +226,7 @@
                     // content = '<em>' + content + '</em>';
                     data.modules[i].submodules[j].content = content;
                 }
-                console.log(content);
+                // console.log(content);
             }
         }
         return data
