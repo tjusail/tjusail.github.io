@@ -403,7 +403,7 @@
             }
         },
         mounted() {
-            axios.get('https://lab.liebes.top/api/gallery/index')
+            axios.get('https://lab-api.liebes.top/api/gallery/index')
                 .then(response => {
                     console.log(response);
                     this.info = parse_data(response.data, this.info)

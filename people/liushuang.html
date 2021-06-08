@@ -259,7 +259,7 @@
             }
         },
         mounted() {
-            axios.get('https://lab.liebes.top/api/teacher/3')
+            axios.get('https://lab-api.liebes.top/api/teacher/3')
                 .then(response => {
                     this.info = parse_data(response.data)
                 })
