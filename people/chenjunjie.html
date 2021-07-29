@@ -35,10 +35,12 @@
         <div class="row align-items-center justify-content-between d-flex">
             <div class="d-flex">
                 <div id="logo" style="max-width: 80px; border-style: none">
-                    <a href="index.html"><img src="../img/tianjindaxue-logo.jpg" alt="" title="" class="img-thumbnail border-0"/></a>
+                    <a href="index.html"><img src="../img/tianjindaxue-logo.jpg" alt="" title=""
+                                              class="img-thumbnail border-0"/></a>
                 </div>
                 <div id="logo-1" style="max-width: 91px">
-                    <a href="index.html"><img src="../img/zhisuanxuebu-logo.png" alt="" title="" class="img-thumbnail border-0"/></a>
+                    <a href="index.html"><img src="../img/zhisuanxuebu-logo.png" alt="" title=""
+                                              class="img-thumbnail border-0"/></a>
                 </div>
             </div>
             <nav id="nav-menu-container">
@@ -66,7 +68,7 @@
                     <h4 class="text-white">{{ info.institution }}, {{ info.school }}, {{ info.address }}</h4>
                     <p></p>
                     <h4 class="text-white">{{ info.email }}</h4>
-<!--                    <p class="text-white">The man with a lot of hair.</p>-->
+                    <!--                    <p class="text-white">The man with a lot of hair.</p>-->
                 </div>
             </div>
         </div>
@@ -81,12 +83,12 @@
                     <img class="img-fluid" v-bind:src="info.profile_image" alt="">
                 </div>
                 <div class="col-lg-6 col-md-6 home-about-right text-justify">
-<!--                    <h1 class="text-uppercase">{{ info.english_name }}({{ info.name }})</h1>-->
+                    <!--                    <h1 class="text-uppercase">{{ info.english_name }}({{ info.name }})</h1>-->
 
                     <!-- <h5 class="pb-1" style="color: #777777">{{ info.address }}</h5>
                     <h5 class="pb-2" style="color: #777777">{{ info.email }}</h5> -->
                     <h3 style="padding-bottom: 15px;">Profile</h3>
-                    
+
                     <p style="max-width: 700px; font-size: 16px; line-height: 1.5;">
                         {{ info.intro }}
                     </p>
@@ -103,7 +105,7 @@
                     <div class="menu-content pb-70 col-lg-10">
                         <div class="title text-center">
                             <h1 class="mb-10">{{ module.name }}</h1>
-                            
+
                             <p></p>
                         </div>
                         <div class="">
@@ -112,6 +114,7 @@
                                     <span style="color: #8490ff; padding-right: 5px"
                                           v-if="submodule.addContent[0]">{{ submodule.addContent[0] }}</span>
                                     <b style="color: #303030; font-weight: bold">{{submodule.title}}</b>
+                                    <span v-if="submodule.attaches[0]"><a :href="submodule.attaches[0]">[pdf]</a></span>
                                     <!--                                    <a style="color: #777777; padding-left: 5px" v-if="submodule.attaches[0]" v-bind:href="submodule.attaches[0]">[pdf]</a>-->
                                     <span style="color: #8490ff; padding-left: 5px"
                                           v-if="submodule.addContent[4]">{{ submodule.addContent[4] }}</span>
@@ -121,13 +124,17 @@
                                        v-html="submodule.content">
                                         <!--                                        <em>{{ submodule.content }}</em>-->
                                     </p>
+
                                     <p style="color: #777777; padding-bottom: 0; margin-bottom: 0" class="comment"
                                        v-if="submodule.addContent[2]" v-html="'In.&nbsp' + submodule.addContent[2]">
-<!--                                         {{ submodule.addContent[2] }}-->
-
+                                        <!--                                         {{ submodule.addContent[2] }}-->
                                     </p>
-                                    <p> <b style="color: #ff0000; font-weight: bold" v-if="submodule.addContent[3]">
+
+
+
+                                    <p v-if="submodule.addContent[3]"><b style="color: #ff0000; font-weight: bold">
                                         {{ submodule.addContent[3] }} </b></p>
+
 
                                 </li>
                             </ul>
@@ -152,29 +159,29 @@
 
 
     <!-- Start brands Area -->
-<!--    <section class="brands-area">-->
-<!--        <div class="container">-->
-<!--            <div class="brand-wrap">-->
-<!--                <div class="row align-items-center active-brand-carusel justify-content-start no-gutters">-->
-<!--                    <div class="col single-brand">-->
-<!--                        <a href="#"><img class="mx-auto" src="img/l1.png" alt=""></a>-->
-<!--                    </div>-->
-<!--                    <div class="col single-brand">-->
-<!--                        <a href="#"><img class="mx-auto" src="img/l2.png" alt=""></a>-->
-<!--                    </div>-->
-<!--                    <div class="col single-brand">-->
-<!--                        <a href="#"><img class="mx-auto" src="img/l3.png" alt=""></a>-->
-<!--                    </div>-->
-<!--                    <div class="col single-brand">-->
-<!--                        <a href="#"><img class="mx-auto" src="img/l4.png" alt=""></a>-->
-<!--                    </div>-->
-<!--                    <div class="col single-brand">-->
-<!--                        <a href="#"><img class="mx-auto" src="img/l5.png" alt=""></a>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </section>-->
+    <!--    <section class="brands-area">-->
+    <!--        <div class="container">-->
+    <!--            <div class="brand-wrap">-->
+    <!--                <div class="row align-items-center active-brand-carusel justify-content-start no-gutters">-->
+    <!--                    <div class="col single-brand">-->
+    <!--                        <a href="#"><img class="mx-auto" src="img/l1.png" alt=""></a>-->
+    <!--                    </div>-->
+    <!--                    <div class="col single-brand">-->
+    <!--                        <a href="#"><img class="mx-auto" src="img/l2.png" alt=""></a>-->
+    <!--                    </div>-->
+    <!--                    <div class="col single-brand">-->
+    <!--                        <a href="#"><img class="mx-auto" src="img/l3.png" alt=""></a>-->
+    <!--                    </div>-->
+    <!--                    <div class="col single-brand">-->
+    <!--                        <a href="#"><img class="mx-auto" src="img/l4.png" alt=""></a>-->
+    <!--                    </div>-->
+    <!--                    <div class="col single-brand">-->
+    <!--                        <a href="#"><img class="mx-auto" src="img/l5.png" alt=""></a>-->
+    <!--                    </div>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--    </section>-->
     <!-- End brands Area -->
 </div>
 
@@ -215,18 +222,18 @@
 <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script>
-    var parse_data = function(data){
-        for(var i = 0; i < data.modules.length; i ++){
+    var parse_data = function (data) {
+        for (var i = 0; i < data.modules.length; i++) {
             var module = data.modules[i];
             module.module_id = module.name.trim().replace(/[\s\/]/g, "-");
-            for(var j = 0; j < module.submodules.length; j ++){
+            for (var j = 0; j < module.submodules.length; j++) {
                 // console.log(module.submodules[j]);
                 var content = module.submodules[j].content;
-                if(content !== null && content.includes(data.english_name)){
+                if (content !== null && content.includes(data.english_name)) {
                     var s = data.english_name;
                     var t = '<b style="color: #0b0b0b; font-weight: bold">' + s + '</b>';
-                    if(content.includes(s + '*')){
-                        s = s  + '*';
+                    if (content.includes(s + '*')) {
+                        s = s + '*';
                         t = '<b style="color: #0b0b0b; font-weight: bold">' + s + '</b>';
                     }
                     content = content.replace(s, t);

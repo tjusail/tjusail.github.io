@@ -115,6 +115,7 @@
                                     <span style="color: #8490ff; padding-right: 5px"
                                           v-if="submodule.addContent[0]">{{ submodule.addContent[0] }}</span>
                                     <b style="color: #303030; font-weight: bold">{{submodule.title}}</b>
+                                    <span v-if="submodule.attaches[0]"><a :href="submodule.attaches[0]">[pdf]</a></span>
                                     <!--                                    <a style="color: #777777; padding-left: 5px" v-if="submodule.attaches[0]" v-bind:href="submodule.attaches[0]">[pdf]</a>-->
                                     <span style="color: #8490ff; padding-left: 5px"
                                           v-if="submodule.addContent[4]">{{ submodule.addContent[4] }}</span>
