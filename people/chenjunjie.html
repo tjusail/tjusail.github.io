@@ -198,6 +198,26 @@
                             </ul>
                         </div>
                     </div>
+                    <div class="menu-content pb-20" v-else-if="module.name === 'News'" >
+                       <div class="title text-center">
+                            <h1 class="mb-10">{{ module.name }}</h1>
+                            <p></p>
+                        </div>
+                        <div class="text-justify">
+                            <ul class="small-unordered-list">
+                                <li v-for="submodule of module.submodules" style="margin-bottom: 5px">
+                                    <p style="margin-bottom: 0.5rem" >
+                                        <span v-html="submodule.title" style="font-weight: bold"></span>:
+                                        <span v-if="submodule.content" v-html="submodule.content" style="font-size: 11.5pt"></span>
+
+                                    </p>
+
+
+
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                     <div class="menu-content pb-20" v-else >
                         <div class="title text-center">
                             <h1 class="mb-10">{{ module.name }}</h1>
