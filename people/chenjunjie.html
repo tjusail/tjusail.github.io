@@ -47,8 +47,15 @@
                 <ul class="nav-menu">
                     <li><a href="../index.html">Home</a></li>
                     <li><a href="#Education">Experience</a></li>
-                    <li><a href="#Conference">Publications</a></li>
+
+                    <li class="menu-has-children"><a href="#Conference">Publications</a>
+                        <ul>
+                            <li><a href="#Conference">Conference</a></li>
+                            <li><a href="#Journal/Report">Journal/Report</a></li>
+                        </ul>
+                    </li>
                     <li><a href="#Academic-Services">Services & Awards</a></li>
+<!--                    <li><a href="#Conference">Publications</a></li>-->
                 </ul>
             </nav><!-- #nav-menu-container -->
         </div>
@@ -102,20 +109,19 @@
                  v-bind:class="{'testimonial-area' : index % 2 === 0,  'home-about-area' : index % 2 === 1}">
             <div class="container">
                 <div class="row d-flex justify-content-center">
-                    <div class="menu-content pb-20 col-lg-10">
+                    <div class="menu-content pb-20" v-if="module.name === 'Conference' || module.name === 'Journal/Report'" >
                         <div class="title text-center">
-                            <h1 class="mb-10">{{ module.name }}</h1>
-
+                            <h1 class="mb-10">Publications - {{ module.name }}</h1>
                             <p></p>
                         </div>
-                        <div class="" v-if="module.name === 'Conference' || module.name === 'Journal/Report'" >
+                        <div class="" >
                             <p style="color: #202022;">* refers to the corresponding author</p>
                             <ul class="ordered-list">
                                 <li v-for="submodule of module.submodules" style="margin-bottom: 20px">
                                     <span style="color: #8490ff; padding-right: 5px"
                                           v-if="submodule.addContent[0]">{{ submodule.addContent[0] }}</span>
                                     <b style="color: #303030; font-weight: bold">{{submodule.title}}</b>
-                                    <span v-if="submodule.attaches[0]"><a :href="submodule.attaches[0]">[pdf]</a></span>
+                                    <span v-if="submodule.attaches[0]"><a :href="submodule.attaches[0]" style="color: #777777;">[pdf]</a></span>
                                     <!--                                    <a style="color: #777777; padding-left: 5px" v-if="submodule.attaches[0]" v-bind:href="submodule.attaches[0]">[pdf]</a>-->
                                     <span style="color: #8490ff; padding-left: 5px"
                                           v-if="submodule.addContent[4]">{{ submodule.addContent[4] }}</span>
@@ -146,7 +152,58 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="" v-else>
+                    </div>
+                    <div class="menu-content pb-20" v-else-if="module.name === 'Academic Services' || module.name === 'Honors and Awards'" >
+                       <div class="title text-center">
+                            <h1 class="mb-10">{{ module.name }}</h1>
+                            <p></p>
+                        </div>
+                        <div class="">
+                            <ul class="small-unordered-list">
+                                <li v-for="submodule of module.submodules" style="margin-bottom: 5px">
+                                    <p style="margin-bottom: 0.5rem" >
+                                        <span v-if="submodule.addContent[4]">{{ submodule.addContent[4] }}</span>:
+                                        <span v-html="submodule.title"></span>
+                                        <span v-if="submodule.content" v-html="submodule.content" style="font-weight:510; color: #06004e"></span>
+
+                                    </p>
+
+<!--                                    -->
+<!--                                    <span style="color: #8490ff; padding-right: 5px"-->
+<!--                                          v-if="submodule.addContent[0]">{{ submodule.addContent[0] }}</span>-->
+<!--                                    <b style="color: #303030; font-weight: bold">{{submodule.title}}</b>-->
+<!--                                    <span v-if="submodule.attaches[0]"><a :href="submodule.attaches[0]">[pdf]</a></span>-->
+<!--                                    &lt;!&ndash;                                    <a style="color: #777777; padding-left: 5px" v-if="submodule.attaches[0]" v-bind:href="submodule.attaches[0]">[pdf]</a>&ndash;&gt;-->
+<!--                                    <span style="color: #8490ff; padding-left: 5px"-->
+<!--                                          v-if="submodule.addContent[4]">{{ submodule.addContent[4] }}</span>-->
+<!--                                    <span class="float-right" style="color: #8490ff;"-->
+<!--                                          v-if="submodule.addContent[1]">{{ submodule.addContent[1] }}</span>-->
+<!--                                    <p style="padding-bottom: 0; margin-bottom: 0" v-if="submodule.content"-->
+<!--                                       v-html="submodule.content">-->
+<!--                                        &lt;!&ndash;                                        <em>{{ submodule.content }}</em>&ndash;&gt;-->
+<!--                                    </p>-->
+
+<!--                                    <p style="color: #555555; padding-bottom: 0; margin-bottom: 0" class="comment"-->
+<!--                                       v-if="submodule.addContent[2]" v-html="'In.&nbsp' + submodule.addContent[2]">-->
+<!--                                        &lt;!&ndash;                                         {{ submodule.addContent[2] }}&ndash;&gt;-->
+<!--                                    </p>-->
+
+
+
+<!--                                    <p v-if="submodule.addContent[3]"><b style="color: #ff0000; font-weight: bold">-->
+<!--                                        {{ submodule.addContent[3] }} </b></p>-->
+
+
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="menu-content pb-20" v-else >
+                        <div class="title text-center">
+                            <h1 class="mb-10">{{ module.name }}</h1>
+                            <p></p>
+                        </div>
+                        <div class="">
                             <ul class="unordered-list">
                                 <li v-for="submodule of module.submodules" style="margin-bottom: 10px">
                                     <span style="color: #8490ff; padding-right: 5px"

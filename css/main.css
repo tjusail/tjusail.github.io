@@ -1355,6 +1355,24 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 50%;
 }
 
+.small-unordered-list li {
+  position: relative;
+  padding-left: 30px;
+  line-height: 1.15em !important;
+}
+.small-unordered-list li:before {
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border: 3px solid #8490ff;
+    background: #fff;
+    top: 7px;
+    left: 13px;
+    border-radius: 10%;
+}
+
+
 .ordered-list {
   margin-left: 30px;
 }
@@ -4490,6 +4508,10 @@ dl.accordion.time-line:before {
   float: none;
   display: inline-block;
   vertical-align: middle;
+}
+
+.menu-content{
+  width: 100%;
 }
 
 /*-------- end footer Area -------------*/
