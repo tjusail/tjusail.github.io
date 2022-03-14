@@ -30,24 +30,26 @@
     <link rel="stylesheet" href="../css/main.css">
 </head>
 <body>
-<header id="header">
+<header id="header" class="">
     <div class="container main-menu">
         <div class="row align-items-center justify-content-between d-flex">
             <div class="d-flex">
                 <div id="logo" style="max-width: 80px; border-style: none">
-                    <a href="index.html"><img src="../img/tianjindaxue-logo.jpg" alt="" title="" class="img-thumbnail border-0"/></a>
+                    <a href="index.html"><img src="../img/tianjindaxue-logo.jpg" alt="" title=""
+                                              class="img-thumbnail border-0"></a>
                 </div>
                 <div id="logo-1" style="max-width: 91px">
-                    <a href="index.html"><img src="../img/zhisuanxuebu-logo.png" alt="" title="" class="img-thumbnail border-0"/></a>
+                    <a href="index.html"><img src="../img/zhisuanxuebu-logo.png" alt="" title=""
+                                              class="img-thumbnail border-0"></a>
                 </div>
             </div>
             <nav id="nav-menu-container">
-                <ul class="nav-menu">
+                <ul class="nav-menu sf-js-enabled sf-arrows" style="touch-action: pan-y;">
                     <li><a href="../index.html">Home</a></li>
                     <li><a href="#Working-Experience">Experience</a></li>
                     <li><a href="#Professional-Services">Services</a></li>
                     <li><a href="#Projects">Projects</a></li>
-                    <li><a href="#Honors-and-Awards">Honors & Awards</a></li>
+                    <li><a href="#Honors-and-Awards">Honors &amp; Awards</a></li>
                     <li><a href="#Conference">Publications</a></li>
                     <li><a href="#Teaching">Teaching</a></li>
                 </ul>
@@ -57,128 +59,581 @@
 </header><!-- #header -->
 
 <div id="container">
-    <!-- start banner Area -->
     <section class="about-banner">
         <div class="container">
             <div class="row d-flex align-items-center justify-content-center">
-                <div class="about-content col-lg-12">
-                    <h1 class="text-white">
-                        {{ info.english_name }}({{ info.name }})
-                    </h1>
-                    </br>
-                    <h4 class="text-white">{{ info.institution }}, {{ info.school }}, {{ info.address }}</h4>
-                    <p></p>
-                    <h4 class="text-white">{{ info.email }}</h4>
-<!--                    <p class="text-white">The man with a lot of hair.</p>-->
-                </div>
+                <div class="about-content col-lg-12"><h1 class="text-white">
+                    Shuang Liu(刘爽)
+                </h1> <br> <h4 class="text-white">College of Intelligence and Computing, Tianjin University, YaGuan
+                    Road, Tianjin, China</h4>
+                    <p></p> <h4 class="text-white">Shuang.Liu@tju.edu.cn</h4></div>
             </div>
         </div>
     </section>
-    <!-- End banner Area -->
-
-    <!-- Start home-about Area -->
     <section class="home-about-area section-gap">
         <div class="container">
             <div class="row align-items-center justify-content-between">
-                <div class="col-lg-5 col-md-5 home-about-left">
-                    <img class="img-fluid" style="max-width: 500px;" v-bind:src="info.profile_image" alt="">
-                </div>
-                <div class="col-lg-6 col-md-6 home-about-right text-justify">
-<!--                    <h1 class="text-uppercase">{{ info.english_name }}({{ info.name }})</h1>-->
-
-                    <!-- <h5 class="pb-1" style="color: #777777">{{ info.address }}</h5>
-                    <h5 class="pb-2" style="color: #777777">{{ info.email }}</h5> -->
-                    <h3 style="padding-bottom: 15px;">Profile</h3>
-                    
+                <div class="col-lg-5 col-md-5 home-about-left"><img alt="" class="img-fluid"
+                                                                    src="http://127.0.0.1:1024/storage/images/WechatIMG103.jpeg"
+                                                                    style="max-width: 500px;"></div>
+                <div class="col-lg-6 col-md-6 home-about-right text-justify"><h3 style="padding-bottom: 15px;">
+                    Profile</h3>
                     <p style="max-width: 700px; font-size: 16px; line-height: 1.5;">
-                        {{ info.intro }}
-                    </p>
-                    <!--                    <a href="#" class="primary-btn text-uppercase">View Full Details</a>-->
+                        Shuang Liu is currently an associate professor at the College of Intelligence and Computing,
+                        Tianjin University (TJU). She worked at the Singapore Institute of Technology (SiT) as a
+                        lecturer before joining TJU. Shuang received her Ph.D. degree from the National University of
+                        Singapore and her Bachelor of Honor from Renmin University. Shuang’s research interests include
+                        program understanding, anomaly detection, and testing of software and CPS systems. She has
+                        published around 20 papers on top-tier international conferences and journals, including TSE,
+                        ESEC/FSE, ASE, and FM. She serves as a program committee member of multiple international
+                        conferences and reviewers of multiple international journals.
+                    </p></div>
+            </div>
+        </div>
+    </section>
+    <section id="News" class="section-gap testimonial-area">
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <div class="menu-content pb-70 col-lg-10">
+                    <div class="title text-center"><h1 class="mb-10">News</h1>
+                        <p></p></div>
+                    <div>
+                        <ul class="unordered-list">
+                            <li style="margin-bottom: 10px;"><!----> <b
+                                    style="color: #303030; font-weight: bold;">to be updated</b> <!----> <!---->
+                                <!----> <!----> <!----> <p><!----></p></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-    <template v-for="(module, index) of info.modules">
-        <section v-bind:id="module.module_id" class="section-gap"
-                 v-bind:class="{'testimonial-area' : index % 2 === 0,  'home-about-area' : index % 2 === 1}">
-            <div class="container">
-                <div class="row d-flex justify-content-center">
-                    <div class="menu-content pb-70 col-lg-10">
-                        <div class="title text-center">
-                            <h1 class="mb-10">{{ module.name }}</h1>
-                            
-                            <p></p>
-                        </div>
-                        <div class="">
-                            <ul class="unordered-list">
-                                <li v-for="submodule of module.submodules" style="margin-bottom: 10px">
-                                    <span style="color: #8490ff; padding-right: 5px"
-                                          v-if="submodule.addContent[0]">{{ submodule.addContent[0] }}</span>
-                                    <b style="color: #303030; font-weight: bold">{{submodule.title}}</b>
-                                    <span v-if="submodule.attaches[0]"><a :href="submodule.attaches[0]">[pdf]</a></span>
-                                    <!--                                    <a style="color: #777777; padding-left: 5px" v-if="submodule.attaches[0]" v-bind:href="submodule.attaches[0]">[pdf]</a>-->
-                                    <span style="color: #8490ff; padding-left: 5px"
-                                          v-if="submodule.addContent[4]">{{ submodule.addContent[4] }}</span>
-                                    <span class="float-right" style="color: #8490ff"
-                                          v-if="submodule.addContent[1]">{{ submodule.addContent[1] }}</span>
-                                    <p style="padding-bottom: 0; margin-bottom: 0" v-if="submodule.content"
-                                       v-html="submodule.content">
-                                        <!--                                        <em>{{ submodule.content }}</em>-->
-                                    </p>
-                                    <p style="color: #777777; padding-bottom: 0; margin-bottom: 0" class="comment"
-                                       v-if="submodule.addContent[2]" v-html="'In.&nbsp' + submodule.addContent[2]">
-                                        <!--                                         {{ submodule.addContent[2] }}-->
-
-                                    </p>
-                                    <p> <b style="color: #ff0000; font-weight: bold" v-if="submodule.addContent[3]">
-                                        {{ submodule.addContent[3] }} </b></p>
-                                </li>
-                            </ul>
-                        </div>
+    <section id="Working-Experience" class="section-gap home-about-area">
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <div class="menu-content pb-70 col-lg-10">
+                    <div class="title text-center"><h1 class="mb-10">Working Experience</h1>
+                        <p></p></div>
+                    <div>
+                        <ul class="unordered-list">
+                            <li style="margin-bottom: 10px;"><!----> <b
+                                    style="color: #303030; font-weight: bold;">Tianjin University</b> <!---->
+                                <span style="color: #8490ff; padding-left: 5px;">October 2017 - Now</span>
+                                <!----> <p style="padding-bottom: 0px; margin-bottom: 0px;">Associate Professor</p>
+                                <!----> <p><!----></p></li>
+                            <li style="margin-bottom: 10px;"><!----> <b
+                                    style="color: #303030; font-weight: bold;">Singapore Institute of
+                                Technology</b> <!----> <span style="color: #8490ff; padding-left: 5px;">June 2016 - October 2017</span>
+                                <!----> <p style="padding-bottom: 0px; margin-bottom: 0px;">Lecturer</p> <!----> <p>
+                                    <!----></p></li>
+                            <li style="margin-bottom: 10px;"><!----> <b
+                                    style="color: #303030; font-weight: bold;">Singapore University of
+                                Technology and Design</b> <!----> <span
+                                    style="color: #8490ff; padding-left: 5px;">July 2015 - May 2016</span>
+                                <!----> <p style="padding-bottom: 0px; margin-bottom: 0px;">Postdoc Research Fellow</p>
+                                <!----> <p><!----></p></li>
+                        </ul>
                     </div>
                 </div>
             </div>
-        </section>
-    </template>
-
-
-    <!--    <section class="timeline section-gap">-->
-    <!--        <div class="text-center">-->
-    <!--            <div class="menu-content pb-70">-->
-    <!--                <div class="title text-center">-->
-    <!--                    <h1 class="mb-10">Education Experience</h1>-->
-    <!--                    <p>Who are in extremely love with eco friendly system.</p>-->
-    <!--                </div>-->
-    <!--            </div>-->
-    <!--        </div>-->
-    <!--    </section>-->
-
-
-    <!-- Start brands Area -->
-<!--    <section class="brands-area">-->
-<!--        <div class="container">-->
-<!--            <div class="brand-wrap">-->
-<!--                <div class="row align-items-center active-brand-carusel justify-content-start no-gutters">-->
-<!--                    <div class="col single-brand">-->
-<!--                        <a href="#"><img class="mx-auto" src="img/l1.png" alt=""></a>-->
-<!--                    </div>-->
-<!--                    <div class="col single-brand">-->
-<!--                        <a href="#"><img class="mx-auto" src="img/l2.png" alt=""></a>-->
-<!--                    </div>-->
-<!--                    <div class="col single-brand">-->
-<!--                        <a href="#"><img class="mx-auto" src="img/l3.png" alt=""></a>-->
-<!--                    </div>-->
-<!--                    <div class="col single-brand">-->
-<!--                        <a href="#"><img class="mx-auto" src="img/l4.png" alt=""></a>-->
-<!--                    </div>-->
-<!--                    <div class="col single-brand">-->
-<!--                        <a href="#"><img class="mx-auto" src="img/l5.png" alt=""></a>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </section>-->
-    <!-- End brands Area -->
+        </div>
+    </section>
+    <section id="Education" class="section-gap testimonial-area">
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <div class="menu-content pb-70 col-lg-10">
+                    <div class="title text-center"><h1 class="mb-10">Education</h1>
+                        <p></p></div>
+                    <div>
+                        <ul class="unordered-list">
+                            <li style="margin-bottom: 10px;"><!----> <b
+                                    style="color: #303030; font-weight: bold;">National University of
+                                Singapore</b> <!----> <span style="color: #8490ff; padding-left: 5px;">2010 - 2015</span>
+                                <!----> <p style="padding-bottom: 0px; margin-bottom: 0px;">Ph.D.</p> <!----> <p>
+                                    <!----></p></li>
+                            <li style="margin-bottom: 10px;"><!----> <b
+                                    style="color: #303030; font-weight: bold;">Renmin University of China</b>
+                                <!----> <span style="color: #8490ff; padding-left: 5px;">2006 - 2010</span>
+                                <!----> <p style="padding-bottom: 0px; margin-bottom: 0px;">B.Eng.</p> <!----> <p>
+                                    <!----></p></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="Professional-Services" class="section-gap home-about-area">
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <div class="menu-content pb-70 col-lg-10">
+                    <div class="title text-center"><h1 class="mb-10">Professional Services</h1>
+                        <p></p></div>
+                    <div>
+                        <ul class="unordered-list">
+                            <li style="margin-bottom: 10px;"><!----> <b
+                                    style="color: #303030; font-weight: bold;">Publication Chair of ICPADS
+                                2019</b> <!----> <!----> <!----> <!----> <!----> <p><!----></p></li>
+                            <li style="margin-bottom: 10px;"><!----> <b
+                                    style="color: #303030; font-weight: bold;">PC member of the following
+                                conferences: ICECCS 2018, ICFEM 2019, SETTA2019, ICECCS 2019, ICECCS 2020, ICFEM
+                                2020</b> <!----> <!----> <!----> <!----> <!----> <p><!----></p></li>
+                            <li style="margin-bottom: 10px;"><!----> <b
+                                    style="color: #303030; font-weight: bold;">Reviewer of the following
+                                journals: TOSEM, ISSE, Computing and Informatics, Journal of Systems and Software</b>
+                                <!----> <!----> <!----> <!----> <!----> <p><!----></p></li>
+                            <li style="margin-bottom: 10px;"><!----> <b
+                                    style="color: #303030; font-weight: bold;">Reviewer of the following
+                                conferences: ICSE, TASE, ICFEM, APSEC, SEFM, ISORC, FTSCS, ACM SAC, ACOMP, SVT, CAI</b>
+                                <!----> <!----> <!----> <!----> <!----> <p><!----></p></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="Projects" class="section-gap testimonial-area">
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <div class="menu-content pb-70 col-lg-10">
+                    <div class="title text-center"><h1 class="mb-10">Projects</h1>
+                        <p></p></div>
+                    <div>
+                        <ul class="unordered-list">
+                            <li style="margin-bottom: 10px;"><!----> <b
+                                    style="color: #303030; font-weight: bold;">R&amp;D of driving scene data
+                                management platform for intelligent connected vehicle simulation test</b> <!---->
+                                <!----> <!----> <p style="padding-bottom: 0px; margin-bottom: 0px;">2020 - 2021</p>
+                                <!----> <p><!----></p></li>
+                            <li style="margin-bottom: 10px;"><!----> <b
+                                    style="color: #303030; font-weight: bold;">Concurrency Bug Detection and
+                                Fixing Key Techniques</b> <!----> <span
+                                    style="color: #8490ff; padding-left: 5px;">2019 - 2021</span> <!----> <p
+                                    style="padding-bottom: 0px; margin-bottom: 0px;">NSFC Project</p> <!----> <p>
+                                <!----></p></li>
+                            <li style="margin-bottom: 10px;"><!----> <b
+                                    style="color: #303030; font-weight: bold;">Network Anomaly Detection and
+                                Localization Key Techniques</b> <!----> <span
+                                    style="color: #8490ff; padding-left: 5px;">2019 - 2021</span> <!----> <p
+                                    style="padding-bottom: 0px; margin-bottom: 0px;">NSFC Key Projects</p> <!----> <p>
+                                <!----></p></li>
+                            <li style="margin-bottom: 10px;"><!----> <b
+                                    style="color: #303030; font-weight: bold;">Research on Key Techniques to
+                                Automatically Interpret and Present Android Privacy Policy(PI)</b> <!----> <span
+                                    style="color: #8490ff; padding-left: 5px;">2019 - 2021</span> <!----> <p
+                                    style="padding-bottom: 0px; margin-bottom: 0px;">NSFC Youth Projects</p> <!----> <p>
+                                <!----></p></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="Honors-and-Awards" class="section-gap home-about-area">
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <div class="menu-content pb-70 col-lg-10">
+                    <div class="title text-center"><h1 class="mb-10">Honors and Awards</h1>
+                        <p></p></div>
+                    <div>
+                        <ul class="unordered-list">
+                            <li style="margin-bottom: 10px;"><!----> <b
+                                    style="color: #303030; font-weight: bold;">ACM SigSoft Distinguish Paper
+                                Award</b> <!----> <span
+                                    style="color: #8490ff; padding-left: 5px;">2020</span> <!----> <p
+                                    style="padding-bottom: 0px; margin-bottom: 0px;">ACM</p> <!----> <p><!----></p></li>
+                            <li style="margin-bottom: 10px;"><!----> <b
+                                    style="color: #303030; font-weight: bold;">MAPTest: An Automatic Platform
+                                for Testing Java Thread-Safe Classes based on MAP-Coverage.First Prize of Prototype
+                                Competition</b> <!----> <span style="color: #8490ff; padding-left: 5px;">2019.11.24</span>
+                                <!----> <p style="padding-bottom: 0px; margin-bottom: 0px;">China Computer
+                                    Federation</p> <!----> <p><!----></p></li>
+                            <li style="margin-bottom: 10px;"><!----> <b
+                                    style="color: #303030; font-weight: bold;">Second Prize of Best Exhibition
+                                Award</b> <!----> <span
+                                    style="color: #8490ff; padding-left: 5px;">2019.11.24</span> <!----> <p
+                                    style="padding-bottom: 0px; margin-bottom: 0px;">China Computer Federation</p>
+                                <!----> <p><!----></p></li>
+                            <li style="margin-bottom: 10px;"><!----> <b
+                                    style="color: #303030; font-weight: bold;">ACM TOSEM Distinguished
+                                Referee</b> <!----> <span style="color: #8490ff; padding-left: 5px;">2017 - 2018</span>
+                                <!----> <p style="padding-bottom: 0px; margin-bottom: 0px;">ACM TOSEM Outstanding
+                                    Jury</p> <!----> <p><!----></p></li>
+                            <li style="margin-bottom: 10px;"><!----> <b
+                                    style="color: #303030; font-weight: bold;">ACM TOSEM Distinguished
+                                Referee</b> <!----> <span style="color: #8490ff; padding-left: 5px;">2015 - 2016</span>
+                                <!----> <p style="padding-bottom: 0px; margin-bottom: 0px;">ACM TOSEM Outstanding
+                                    Jury</p> <!----> <p><!----></p></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="Conference" class="section-gap testimonial-area">
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <div class="menu-content pb-70 col-lg-10">
+                    <div class="title text-center"><h1 class="mb-10">Conference</h1>
+                        <p></p></div>
+                    <div>
+                        <ul class="unordered-list">
+                            <li style="margin-bottom: 10px;"><span
+                                    style="color: #8490ff; padding-right: 5px;">[WWW'21]</span> <b
+                                    style="color: #303030; font-weight: bold;">Have You been Properly Notified?
+                                Automatic Compliance Analysis of Privacy Policy Text with GDPR Article 13 .</b> <span><a
+                                    href="http://127.0.0.1:1024/storage/files/liu/2021/WWW21Privacy.pdf">[pdf]</a></span>
+                                <!----> <span class="float-right" style="color: #8490ff;">(CCF-A)</span>
+                                <p style="padding-bottom: 0px; margin-bottom: 0px;"><b
+                                        style="color: #0b0b0b; font-weight: bold">Shuang Liu</b>, Baiyang Zhao, Renjie
+                                    Guo, Guozhu Meng, Fan Zhang, Meishan Zhang*</p>
+                                <p class="comment"
+                                   style="color: #777777; padding-bottom: 0px; margin-bottom: 0px;">In.&nbsp;The
+                                    30th The Web Conference (WWW 2021) (to appear). </p>
+                                <p><!----></p></li>
+                            <li style="margin-bottom: 10px;"><span
+                                    style="color: #8490ff; padding-right: 5px;">[FSE'20]</span> <b
+                                    style="color: #303030; font-weight: bold;">Deep Learning Library Testing via
+                                Effective Model Generation.</b> <!----> <!----> <span class="float-right"
+                                                                                      style="color: #8490ff;">(CCF-A)</span>
+                                <p style="padding-bottom: 0px; margin-bottom: 0px;">Zan Wang, Ming Yan, Junjie Chen, <b
+                                        style="color: #0b0b0b; font-weight: bold">Shuang Liu</b>, Dongdi Zhang</p>
+                                <p class="comment"
+                                   style="color: #777777; padding-bottom: 0px; margin-bottom: 0px;">In.&nbsp;The
+                                    28th ACM Joint European Software Engineering Conference and Symposium on the
+                                    Foundations of Software Engineering , November 8-13, 2020, pages to appear,
+                                    Sacramento, California, United States</p>
+                                <p><b style="color: #ff0000; font-weight: bold;">
+                                    🏆 ACM SIGSOFT Distinguished Paper Award </b></p></li>
+                            <li style="margin-bottom: 10px;"><span
+                                    style="color: #8490ff; padding-right: 5px;">[ICECCS'20]</span> <b
+                                    style="color: #303030; font-weight: bold;">iFix: Fixing Concurrency Bugs
+                                While They Are Introduced.</b> <!----> <!----> <span class="float-right"
+                                                                                     style="color: #8490ff;">(CCF-C)</span>
+                                <p style="padding-bottom: 0px; margin-bottom: 0px;">Zan Wang, Haichi Wang, <b
+                                        style="color: #0b0b0b; font-weight: bold">Shuang Liu*</b>, Jun Sun, Haoyu Wang,
+                                    Junjie Chen</p>
+                                <p class="comment"
+                                   style="color: #777777; padding-bottom: 0px; margin-bottom: 0px;">In.&nbsp;The
+                                    25th International Conference on Engineering of Complex Computer Systems, October
+                                    28-31, 2020, pages to appear, Singapore</p>
+                                <p><!----></p></li>
+                            <li style="margin-bottom: 10px;"><span
+                                    style="color: #8490ff; padding-right: 5px;">[ICECCS'20]</span> <b
+                                    style="color: #303030; font-weight: bold;">An Empirical Study on Correlation
+                                between Coverage and Robustness for Deep Neural Networks.</b> <!----> <!----> <span
+                                    class="float-right" style="color: #8490ff;">(CCF-C)</span>
+                                <p style="padding-bottom: 0px; margin-bottom: 0px;">Yizhen Dong, Peixin Zhang, Jingyi
+                                    Wang, <b style="color: #0b0b0b; font-weight: bold">Shuang Liu</b>, Jun Sun, Jianye
+                                    Hao, Xinyu Wang, Li Wang, Jin Song Dong and Ting Dai</p>
+                                <p class="comment"
+                                   style="color: #777777; padding-bottom: 0px; margin-bottom: 0px;">In.&nbsp;The
+                                    25th International Conference on Engineering of Complex Computer Systems, October
+                                    28-31, 2020, pages to appear, Singapore</p>
+                                <p><!----></p></li>
+                            <li style="margin-bottom: 10px;"><span
+                                    style="color: #8490ff; padding-right: 5px;"> </span> <b
+                                    style="color: #303030; font-weight: bold;">APPCorp: A Corpus for Android
+                                Privacy Policy Document Structure Analysis .</b> <span><a
+                                    href="http://127.0.0.1:1024/storage/files/liu/2020/arxiv20.pdf">[pdf]</a></span>
+                                <!----> <span class="float-right" style="color: #8490ff;">arXiv preprint arXiv:1911.05904 </span>
+                                <p style="padding-bottom: 0px; margin-bottom: 0px;"><b
+                                        style="color: #0b0b0b; font-weight: bold">Shuang Liu</b>, Renjie Guo, Baiyang
+                                    Zhao, Tao Chen, Meishan Zhang</p>
+                                <p class="comment"
+                                   style="color: #777777; padding-bottom: 0px; margin-bottom: 0px;">In.&nbsp;arXiv
+                                    preprint arXiv:2005.06945 </p>
+                                <p><!----></p></li>
+                            <li style="margin-bottom: 10px;"><span
+                                    style="color: #8490ff; padding-right: 5px;">[APSEC'19]</span> <b
+                                    style="color: #303030; font-weight: bold;">Towards a Formal Approach to
+                                Defining and Computing the Complexity of Component Based Software .</b> <span><a
+                                    href="http://127.0.0.1:1024/storage/files/liu/2019/APSEC19.pdf">[pdf]</a></span>
+                                <!----> <span class="float-right" style="color: #8490ff;">(CCF-C)</span>
+                                <p style="padding-bottom: 0px; margin-bottom: 0px;">Yongxin Zhao, Xiujuan Zhang, Ling
+                                    Shi, Gan Zeng, Feng Sheng, <b style="color: #0b0b0b; font-weight: bold">Shuang
+                                        Liu</b></p>
+                                <p class="comment"
+                                   style="color: #777777; padding-bottom: 0px; margin-bottom: 0px;">In.&nbsp;The
+                                    26th Asia-Pacific Software Engineering Conference (APSEC) (pp. 331-338). IEEE </p>
+                                <p><!----></p></li>
+                            <li style="margin-bottom: 10px;"><!----> <b
+                                    style="color: #303030; font-weight: bold;">There is Limited Correlation
+                                between Coverage and Robustness for Deep Neural Networks .</b> <span><a
+                                    href="http://127.0.0.1:1024/storage/files/liu/2019/arxiv19.pdf">[pdf]</a></span>
+                                <!----> <!----> <p style="padding-bottom: 0px; margin-bottom: 0px;">Yizhen Dong, Peixin
+                                    Zhang, Jingyi Wang, <b style="color: #0b0b0b; font-weight: bold">Shuang Liu</b>, Jun
+                                    Sun, Jianye Hao, Xinyu Wang, Li Wang, Jinsong Dong, Dai Ting</p> <!----> <p>
+                                    <!----></p></li>
+                            <li style="margin-bottom: 10px;"><span
+                                    style="color: #8490ff; padding-right: 5px;">[ASE'19]</span> <b
+                                    style="color: #303030; font-weight: bold;">MAP-Coverage: a Novel Coverage
+                                Criteria for Testing Thread-Safe Classes .</b> <span><a
+                                    href="http://127.0.0.1:1024/storage/files/liu/2019/ASE19.pdf">[pdf]</a></span>
+                                <!----> <span class="float-right" style="color: #8490ff;">(CCF-A)</span>
+                                <p style="padding-bottom: 0px; margin-bottom: 0px;">Zan Wang, Yingquan Zhao, <b
+                                        style="color: #0b0b0b; font-weight: bold">Shuang Liu*</b>, Jun Sun, Xiang Chen,
+                                    Huarui Lin</p>
+                                <p class="comment"
+                                   style="color: #777777; padding-bottom: 0px; margin-bottom: 0px;">In.&nbsp;The
+                                    34th IEEE/ACM International Conference on Automated Software Engineering (ASE) (pp.
+                                    722-734). IEEE </p>
+                                <p><!----></p></li>
+                            <li style="margin-bottom: 10px;"><span
+                                    style="color: #8490ff; padding-right: 5px;">[ICECCS'19]</span> <b
+                                    style="color: #303030; font-weight: bold;">Adaptive Randomized Scheduling
+                                for Concurrency Bug Detection .</b> <span><a
+                                    href="http://127.0.0.1:1024/storage/files/liu/2019/ICECCS19.pdf">[pdf]</a></span>
+                                <!----> <span class="float-right" style="color: #8490ff;">(CCF-C)</span>
+                                <p style="padding-bottom: 0px; margin-bottom: 0px;">Zan Wang, Dongdi Zhang, <b
+                                        style="color: #0b0b0b; font-weight: bold">Shuang Liu*</b>, Jun Sun, Yingquan
+                                    Zhao</p>
+                                <p class="comment"
+                                   style="color: #777777; padding-bottom: 0px; margin-bottom: 0px;">In.&nbsp;The
+                                    24th International Conference on Engineering of Complex Computer Systems (ICECCS)
+                                    (pp. 124-133). IEEE </p>
+                                <p><!----></p></li>
+                            <li style="margin-bottom: 10px;"><span
+                                    style="color: #8490ff; padding-right: 5px;">[ICSME'19]</span> <b
+                                    style="color: #303030; font-weight: bold;">TECCD: A Tree Embedding Approach
+                                for Code Clone Detectio .</b> <span><a
+                                    href="http://127.0.0.1:1024/storage/files/liu/2019/ICSME19.pdf">[pdf]</a></span>
+                                <!----> <span class="float-right" style="color: #8490ff;">(CCF-B)</span>
+                                <p style="padding-bottom: 0px; margin-bottom: 0px;">Yi Gao, Zan Wang, <b
+                                        style="color: #0b0b0b; font-weight: bold">Shuang Liu*</b>, Lin Yang, Wei Sang,
+                                    Yuanfang Cai</p>
+                                <p class="comment"
+                                   style="color: #777777; padding-bottom: 0px; margin-bottom: 0px;">In.&nbsp;2019
+                                    IEEE International Conference on Software Maintenance and Evolution (ICSME) (pp.
+                                    145-156). IEEE </p>
+                                <p><!----></p></li>
+                            <li style="margin-bottom: 10px;"><span
+                                    style="color: #8490ff; padding-right: 5px;">[BIBM'18]</span> <b
+                                    style="color: #303030; font-weight: bold;">Attention-Based Recurrent
+                                Multi-Channel Neural Network for Influenza Epidemic Prediction .</b> <span><a
+                                    href="http://127.0.0.1:1024/storage/files/liu/2018/BIBM18.pdf">[pdf]</a></span>
+                                <!----> <span class="float-right" style="color: #8490ff;">(CCF-B)</span>
+                                <p style="padding-bottom: 0px; margin-bottom: 0px;">Bofeng Fu, Yaodong Yang, Yu Ma,
+                                    Jianye Hao, Siqi Chen, <b style="color: #0b0b0b; font-weight: bold">Shuang Liu</b>,
+                                    Tiegang Li, Zhenyu Liao, Xianglei Zhu</p>
+                                <p class="comment"
+                                   style="color: #777777; padding-bottom: 0px; margin-bottom: 0px;">In.&nbsp;2018
+                                    IEEE International Conference on Bioinformatics and Biomedicine (BIBM) (pp.
+                                    1245-1248). IEEE </p>
+                                <p><!----></p></li>
+                            <li style="margin-bottom: 10px;"><span
+                                    style="color: #8490ff; padding-right: 5px;">[ASE'18]</span> <b
+                                    style="color: #303030; font-weight: bold;">PFix: fixing concurrency bugs
+                                based on memory access patterns .</b> <span><a
+                                    href="http://127.0.0.1:1024/storage/files/liu/2018/ASE18.pdf">[pdf]</a></span>
+                                <!----> <span class="float-right" style="color: #8490ff;">(CCF-A)</span>
+                                <p style="padding-bottom: 0px; margin-bottom: 0px;">Huarui Lin, Zan Wang, <b
+                                        style="color: #0b0b0b; font-weight: bold">Shuang Liu*</b>, Jun Sun, Dongdi
+                                    Zhang, Guangning Wei</p>
+                                <p class="comment"
+                                   style="color: #777777; padding-bottom: 0px; margin-bottom: 0px;">In.&nbsp;The
+                                    33rd ACM/IEEE International Conference on Automated Software Engineering (pp.
+                                    589-600) </p>
+                                <p><!----></p></li>
+                            <li style="margin-bottom: 10px;"><span
+                                    style="color: #8490ff; padding-right: 5px;">[FM'18]</span> <b
+                                    style="color: #303030; font-weight: bold;">Falsification of Cyber-Physical
+                                Systems Using Deep Reinforcement Learning .</b> <span><a
+                                    href="http://127.0.0.1:1024/storage/files/liu/2018/FM18.pdf">[pdf]</a></span>
+                                <!----> <span class="float-right" style="color: #8490ff;">(CCF-B)</span>
+                                <p style="padding-bottom: 0px; margin-bottom: 0px;">Takumi Akazaki, <b
+                                        style="color: #0b0b0b; font-weight: bold">Shuang Liu</b>, Yoriyuki Yamagata,
+                                    Yihai Duan, Jianye Hao</p>
+                                <p class="comment"
+                                   style="color: #777777; padding-bottom: 0px; margin-bottom: 0px;">In.&nbsp;The
+                                    International Symposium on Formal Methods (pp. 456-465). Springer, Cham </p>
+                                <p><!----></p></li>
+                            <li style="margin-bottom: 10px;"><span
+                                    style="color: #8490ff; padding-right: 5px;">[ICECCS'17]</span> <b
+                                    style="color: #303030; font-weight: bold;">Towards solving decision making
+                                problems using probabilistic model checking .</b> <span><a
+                                    href="http://127.0.0.1:1024/storage/files/liu/2017/ICECCS17.pdf">[pdf]</a></span>
+                                <!----> <span class="float-right" style="color: #8490ff;">(CCF-C)</span>
+                                <p style="padding-bottom: 0px; margin-bottom: 0px;">Ling Shi, <b
+                                        style="color: #0b0b0b; font-weight: bold">Shuang Liu</b>, Jianye Hao, Jun Yang
+                                    Koh, Zhe Hou, Jinsong Dong</p>
+                                <p class="comment"
+                                   style="color: #777777; padding-bottom: 0px; margin-bottom: 0px;">In.&nbsp;The
+                                    22nd International Conference on Engineering of Complex Computer Systems (ICECCS)
+                                    (pp. 150-153). IEEE </p>
+                                <p><!----></p></li>
+                            <li style="margin-bottom: 10px;"><span
+                                    style="color: #8490ff; padding-right: 5px;">[ICSE'17]</span> <b
+                                    style="color: #303030; font-weight: bold;">JSFox: Integrating Static and
+                                Dynamic Type Analysis of JavaScript Programs .</b> <span><a
+                                    href="http://127.0.0.1:1024/storage/files/liu/2017/ICSE17.pdf">[pdf]</a></span>
+                                <!----> <span class="float-right" style="color: #8490ff;">(CCF-A)</span>
+                                <p style="padding-bottom: 0px; margin-bottom: 0px;">Tian Huat Tan, Yinxing Xue, Manman
+                                    Chen, <b style="color: #0b0b0b; font-weight: bold">Shuang Liu</b>, Yi Yu, Jun Sun
+                                </p>
+                                <p class="comment"
+                                   style="color: #777777; padding-bottom: 0px; margin-bottom: 0px;">In.&nbsp;2017
+                                    IEEE/ACM 39th International Conference on Software Engineering Companion (ICSE-C)
+                                    (pp. 256-258). IEEE </p>
+                                <p><!----></p></li>
+                            <li style="margin-bottom: 10px;"><span
+                                    style="color: #8490ff; padding-right: 5px;">[ICECCS'16]</span> <b
+                                    style="color: #303030; font-weight: bold;">Improving Quality of Use Case
+                                Documents through Learning and User Interaction .</b> <span><a
+                                    href="http://127.0.0.1:1024/storage/files/liu/2016/ICECCS16a.pdf">[pdf]</a></span>
+                                <!----> <span class="float-right" style="color: #8490ff;">(CCF-C)</span>
+                                <p style="padding-bottom: 0px; margin-bottom: 0px;"><b
+                                        style="color: #0b0b0b; font-weight: bold">Shuang Liu</b>, Jun Sun, Hao Xiao,
+                                    Bimlesh Wadhwa, Jinsong Dong, Xinyu</p>
+                                <p class="comment"
+                                   style="color: #777777; padding-bottom: 0px; margin-bottom: 0px;">In.&nbsp;2016
+                                    21st International Conference on Engineering of Complex Computer Systems (ICECCS)
+                                    (pp. 101-110). IEEE </p>
+                                <p><!----></p></li>
+                            <li style="margin-bottom: 10px;"><span
+                                    style="color: #8490ff; padding-right: 5px;">[ICECCS'16]</span> <b
+                                    style="color: #303030; font-weight: bold;">Towards Using Concurrent Java API
+                                Correctly .</b> <span><a
+                                    href="http://127.0.0.1:1024/storage/files/liu/2016/ICECCS16b.pdf">[pdf]</a></span>
+                                <!----> <span class="float-right" style="color: #8490ff;">(CCF-C)</span>
+                                <p style="padding-bottom: 0px; margin-bottom: 0px;"><b
+                                        style="color: #0b0b0b; font-weight: bold">Shuang Liu</b>, Guangdong Bai, Jun
+                                    Sun, Jinsong Dong</p>
+                                <p class="comment"
+                                   style="color: #777777; padding-bottom: 0px; margin-bottom: 0px;">In.&nbsp;2016
+                                    21st International Conference on Engineering of Complex Computer Systems (ICECCS)
+                                    (pp. 219-222). IEEE </p>
+                                <p><!----></p></li>
+                            <li style="margin-bottom: 10px;"><span
+                                    style="color: #8490ff; padding-right: 5px;">[ASE'14]</span> <b
+                                    style="color: #303030; font-weight: bold;">Automatic Early Defects Detection
+                                in Use Case Documents .</b> <span><a
+                                    href="http://127.0.0.1:1024/storage/files/liu/2014/ASE14.pdf">[pdf]</a></span>
+                                <!----> <span class="float-right" style="color: #8490ff;">(CCF-A)</span>
+                                <p style="padding-bottom: 0px; margin-bottom: 0px;"><b
+                                        style="color: #0b0b0b; font-weight: bold">Shuang Liu</b>, Jun Sun, Yang Liu, Yue
+                                    Zhang, Bimlesh Wadhwa, Jinsong Dong</p>
+                                <p class="comment"
+                                   style="color: #777777; padding-bottom: 0px; margin-bottom: 0px;">In.&nbsp;Proceedings
+                                    of the 29th ACM/IEEE international conference on Automated software engineering (pp.
+                                    785-790) </p>
+                                <p><!----></p></li>
+                            <li style="margin-bottom: 10px;"><span
+                                    style="color: #8490ff; padding-right: 5px;">[FSE'13]</span> <b
+                                    style="color: #303030; font-weight: bold;">USMMC: A Self-Contained Model
+                                Checker for UML State Machines .</b> <span><a
+                                    href="http://127.0.0.1:1024/storage/files/liu/2013/FSE13.pdf">[pdf]</a></span>
+                                <!----> <span class="float-right" style="color: #8490ff;">(CCF-A)</span>
+                                <p style="padding-bottom: 0px; margin-bottom: 0px;"><b
+                                        style="color: #0b0b0b; font-weight: bold">Shuang Liu</b>, Yang Liu, Jun Sun,
+                                    Manchun Zheng, Bimlesh Wahdwa, Jinsong Dong</p>
+                                <p class="comment"
+                                   style="color: #777777; padding-bottom: 0px; margin-bottom: 0px;">In.&nbsp;Proceedings
+                                    of the 2013 9th Joint Meeting on Foundations of Software Engineering (pp.
+                                    623-626) </p>
+                                <p><!----></p></li>
+                            <li style="margin-bottom: 10px;"><span
+                                    style="color: #8490ff; padding-right: 5px;">[iFM'13] </span> <b
+                                    style="color: #303030; font-weight: bold;">A Formal Semantics for the
+                                Complete Syntax of UML State Machines with Communications .</b> <span><a
+                                    href="http://127.0.0.1:1024/storage/files/liu/2013/iFM13.pdf">[pdf]</a></span>
+                                <!----> <!----> <p style="padding-bottom: 0px; margin-bottom: 0px;"><b
+                                        style="color: #0b0b0b; font-weight: bold">Shuang Liu</b>, Yang Liu,
+                                    ÉtienneAndré, Christine Choppy, Jun Sun, Bimlesh Wadhwa, Jinsong Dong</p>
+                                <p class="comment"
+                                   style="color: #777777; padding-bottom: 0px; margin-bottom: 0px;">In.&nbsp;International
+                                    Conference on Integrated Formal Methods (pp. 331-346). Springer, Berlin,
+                                    Heidelberg </p>
+                                <p><!----></p></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="Journal-Report" class="section-gap home-about-area">
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <div class="menu-content pb-70 col-lg-10">
+                    <div class="title text-center"><h1 class="mb-10">Journal/Report</h1>
+                        <p></p></div>
+                    <div>
+                        <ul class="unordered-list">
+                            <li style="margin-bottom: 10px;"><span
+                                    style="color: #8490ff; padding-right: 5px;">[TSE'2020]</span> <b
+                                    style="color: #303030; font-weight: bold;">Falsification of Cyber-Physical
+                                Systems Using Deep Reinforcement Learning .</b> <span><a
+                                    href="http://127.0.0.1:1024/storage/files/liu/2020/TSE20.pdf">[pdf]</a></span>
+                                <!----> <span class="float-right" style="color: #8490ff;">(CCF-A)</span>
+                                <p style="padding-bottom: 0px; margin-bottom: 0px;">Yoriyuki Yamagata, <b
+                                        style="color: #0b0b0b; font-weight: bold">Shuang Liu*</b>, Takumi Akazaki, Yihai
+                                    Duan, Jianye Hao</p>
+                                <p class="comment"
+                                   style="color: #777777; padding-bottom: 0px; margin-bottom: 0px;">In.&nbsp;IEEE
+                                    Transactions on Software Engineering 2020, to appear </p>
+                                <p><!----></p></li>
+                            <li style="margin-bottom: 10px;"><!----> <b
+                                    style="color: #303030; font-weight: bold;">深度神经网络测试研究综述 .</b> <span><a
+                                    href="http://127.0.0.1:1024/storage/files/liu/2020/软件学报20.pdf">[pdf]</a></span>
+                                <!----> <span class="float-right" style="color: #8490ff;">(CCF-B)</span>
+                                <p style="padding-bottom: 0px; margin-bottom: 0px;">王赞, 闫明, 刘爽*, 陈俊洁, 张栋迪, 吴卓, 陈翔</p>
+                                <p class="comment"
+                                   style="color: #777777; padding-bottom: 0px; margin-bottom: 0px;">In.&nbsp;软件学报,
+                                    2020, 31(5): 1255-1275 </p>
+                                <p><b style="color: #ff0000; font-weight: bold;">
+                                    🏆 CCF Best Exhibition Award </b></p></li>
+                            <li style="margin-bottom: 10px;"><span
+                                    style="color: #8490ff; padding-right: 5px;">[BMC'19]</span> <b
+                                    style="color: #303030; font-weight: bold;">Attention-based recurrent neural
+                                network for influenza epidemic prediction .</b> <span><a
+                                    href="http://127.0.0.1:1024/storage/files/liu/2019/BMC19.pdf">[pdf]</a></span>
+                                <!----> <span class="float-right" style="color: #8490ff;">(CCF-B)</span>
+                                <p style="padding-bottom: 0px; margin-bottom: 0px;">Xianglei Zhu, Bofeng Fu, Yaodong
+                                    Yang, Yu Ma, Jianye Hao, Siqi Chen, <b style="color: #0b0b0b; font-weight: bold">Shuang
+                                        Liu</b>, Tiegang Li, Sen Liu, Weiming Guo and others</p>
+                                <p class="comment"
+                                   style="color: #777777; padding-bottom: 0px; margin-bottom: 0px;">In.&nbsp;The
+                                    BMC bioinformatics 20.18 (2019): 1-10 </p>
+                                <p><!----></p></li>
+                            <li style="margin-bottom: 10px;"><span
+                                    style="color: #8490ff; padding-right: 5px;">[JSS'19]</span> <b
+                                    style="color: #303030; font-weight: bold;">LoopFix: An Approach to Automatic
+                                Repair of Buggy Loops .</b> <span><a
+                                    href="http://127.0.0.1:1024/storage/files/liu/2019/JSS19.pdf">[pdf]</a></span>
+                                <!----> <span class="float-right" style="color: #8490ff;">(CCF-B)</span>
+                                <p style="padding-bottom: 0px; margin-bottom: 0px;">Weichao Wang, Zhaopeng Meng, Zan
+                                    Wang, <b style="color: #0b0b0b; font-weight: bold">Shuang Liu</b>, Jianye Hao</p>
+                                <p class="comment"
+                                   style="color: #777777; padding-bottom: 0px; margin-bottom: 0px;">In.&nbsp;Journal
+                                    of Systems and Software 2019, Volume 156, Pages 100-112 </p>
+                                <p><!----></p></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="Teaching" class="section-gap testimonial-area">
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <div class="menu-content pb-70 col-lg-10">
+                    <div class="title text-center"><h1 class="mb-10">Teaching</h1>
+                        <p></p></div>
+                    <div>
+                        <ul class="unordered-list">
+                            <li style="margin-bottom: 10px;"><!----> <b
+                                    style="color: #303030; font-weight: bold;">Theory of Compilation</b> <!---->
+                                <!----> <!----> <p style="padding-bottom: 0px; margin-bottom: 0px;">2018 Fall, 2019
+                                    Fall, 2020 Spring</p> <!----> <p><!----></p></li>
+                            <li style="margin-bottom: 10px;"><!----> <b
+                                    style="color: #303030; font-weight: bold;">Introduction to Software
+                                Testing</b> <!----> <!----> <!----> <p style="padding-bottom: 0px; margin-bottom: 0px;">
+                                2018 Spring, 2019 Spring, 2020 Spring</p> <!----> <p><!----></p></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </div>
 
 
@@ -198,7 +653,7 @@
 <script src="../js/vendor/jquery-2.2.4.min.js"></script>
 <script src="../js/popper.min.js"></script>
 <script src="../js/vendor/bootstrap.min.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
+<!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>-->
 <script src="../js/easing.min.js"></script>
 <script src="../js/hoverIntent.js"></script>
 <script src="../js/superfish.min.js"></script>
@@ -214,60 +669,7 @@
 <script src="../js/mail-script.js"></script>
 <script src="../js/main.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/vue"></script>
-<!--<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>-->
-<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-<script>
-    var parse_data = function(data){
-        for(var i = 0; i < data.modules.length; i ++){
-            var module = data.modules[i];
-            module.module_id = module.name.trim().replace(/[\s\/]/g, "-");
-            for(var j = 0; j < module.submodules.length; j ++){
-                // console.log(module.submodules[j]);
-                var content = module.submodules[j].content;
-                if(content !== null && content.includes(data.english_name)){
-                    var s = data.english_name;
-                    var t = '<b style="color: #0b0b0b; font-weight: bold">' + s + '</b>';
-                    if(content.includes(s + '*')){
-                        s = s  + '*';
-                        t = '<b style="color: #0b0b0b; font-weight: bold">' + s + '</b>';
-                    }
-                    content = content.replace(s, t);
-                    // content = '<em>' + content + '</em>';
-                    data.modules[i].submodules[j].content = content;
-                }
-                // console.log(content);
-            }
-        }
-        return data
-    }
-    new Vue({
-        el: '#container',
-        data() {
-            return {
-                info: {
-                    'name': '',
-                    'address': '',
-                    'avatar': '',
-                    'email': '',
-                    'english_name': '',
-                    'institution': '',
-                    'intro': '',
-                    'school': '',
-                    'modules': [],
-
-                }
-            }
-        },
-        mounted() {
-            axios.get('https://lab-api.liebes.top/api/teacher/3')
-                .then(response => {
-                    this.info = parse_data(response.data)
-                })
-        }
-
-    })
-</script>
 
 </body>
+
 </html>

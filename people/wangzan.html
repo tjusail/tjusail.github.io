@@ -31,21 +31,21 @@
     <link rel="stylesheet" href="../css/main.css">
 </head>
 <body>
-<header id="header">
+<header id="header" class="">
     <div class="container main-menu">
         <div class="row align-items-center justify-content-between d-flex">
             <div class="d-flex">
                 <div id="logo" style="max-width: 80px; border-style: none">
                     <a href="index.html"><img src="../img/tianjindaxue-logo.jpg" alt="" title=""
-                                              class="img-thumbnail border-0"/></a>
+                                              class="img-thumbnail border-0"></a>
                 </div>
                 <div id="logo-1" style="max-width: 91px">
                     <a href="index.html"><img src="../img/zhisuanxuebu-logo.png" alt="" title=""
-                                              class="img-thumbnail border-0"/></a>
+                                              class="img-thumbnail border-0"></a>
                 </div>
             </div>
             <nav id="nav-menu-container">
-                <ul class="nav-menu">
+                <ul class="nav-menu sf-js-enabled sf-arrows" style="touch-action: pan-y;">
                     <li><a href="../index.html">Home</a></li>
                     <li><a href="#Working-Experience">Experience</a></li>
                     <li><a href="#Projects">Projects</a></li>
@@ -58,132 +58,357 @@
 </header><!-- #header -->
 
 <div id="container">
-    <!-- start banner Area -->
     <section class="about-banner">
         <div class="container">
             <div class="row d-flex align-items-center justify-content-center">
-                <div class="about-content col-lg-12">
-                    <h1 class="text-white">
-                        {{ info.english_name }}({{ info.name }})
-                    </h1>
-                    </br>
-                    <h4 class="text-white">{{ info.institution }}, {{ info.school }}, {{ info.address }}</h4>
-                    <p></p>
-                    <h4 class="text-white">{{ info.email }}</h4>
-                    <!--                    <p class="text-white">The man with a lot of hair.</p>-->
-                </div>
+                <div class="about-content col-lg-12"><h1 class="text-white">
+                    Zan Wang(王赞)
+                </h1> <br> <h4 class="text-white">College of Intelligence and Computing, Tianjin University, YaGuan
+                    Road, Tianjin, China</h4>
+                    <p></p> <h4 class="text-white">wangzan@tju.edu.cn</h4></div>
             </div>
         </div>
     </section>
-    <!-- End banner Area -->
-
-    <!-- Start home-about Area -->
     <section class="home-about-area section-gap">
         <div class="container">
             <div class="row align-items-center justify-content-between">
-                <div class="col-lg-5 col-md-5 home-about-left">
-                    <img class="img-fluid" style="max-width: 500px;" v-bind:src="info.profile_image" alt="">
-                </div>
-                <div class="col-lg-6 col-md-6 home-about-right text-justify">
-                    <!--                    <h1 class="text-uppercase">{{ info.english_name }}({{ info.name }})</h1>-->
-
-                    <!-- <h5 class="pb-1" style="color: #777777">{{ info.address }}</h5>
-                    <h5 class="pb-2" style="color: #777777">{{ info.email }}</h5> -->
-                    <h3 style="padding-bottom: 15px;">Profile</h3>
-
+                <div class="col-lg-5 col-md-5 home-about-left"><img alt="" class="img-fluid"
+                                                                    src="../img/wangzan.jpeg"
+                                                                    style="max-width: 500px;"></div>
+                <div class="col-lg-6 col-md-6 home-about-right text-justify"><h3 style="padding-bottom: 15px;">
+                    Profile</h3>
                     <p style="max-width: 700px; font-size: 16px; line-height: 1.5;">
-                        {{ info.intro }}
-                    </p>
-                    <!--                    <a href="#" class="primary-btn text-uppercase">View Full Details</a>-->
+                        I am currently an associate professor in the school of College of Intelligence and Computing of
+                        Tianjin University. I have obtained my Ph.D. degree in 2009 from Tianjin University. My research
+                        interests mainly focus on concurrent program analysis, Deep neural network testing, Self-driving
+                        autonomous vehicles' testing, and natural language processing.
+                    </p></div>
+            </div>
+        </div>
+    </section>
+    <section id="Working-Experience" class="section-gap testimonial-area">
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <div class="menu-content pb-70 col-lg-10">
+                    <div class="title text-center"><h1 class="mb-10">Working Experience</h1>
+                        <p></p></div>
+                    <div>
+                        <ul class="unordered-list">
+                            <li style="margin-bottom: 10px;"><!----> <b
+                                    style="color: #303030; font-weight: bold;">Tianjin University</b> <!---->
+                                <span style="color: #8490ff; padding-left: 5px;">2010 - 2015</span> <!---->
+                                <p style="padding-bottom: 0px; margin-bottom: 0px;">Assistant Professor</p> <!----> <p>
+                                    <!----></p></li>
+                            <li style="margin-bottom: 10px;"><!----> <b
+                                    style="color: #303030; font-weight: bold;">Tianjin University</b> <!---->
+                                <!----> <span class="float-right" style="color: #8490ff;">2015 - Now</span>
+                                <p style="padding-bottom: 0px; margin-bottom: 0px;">Associate Professor</p> <!----> <p>
+                                    <!----></p></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-    <template v-for="(module, index) of info.modules">
-        <section v-bind:id="module.module_id" class="section-gap"
-                 v-bind:class="{'testimonial-area' : index % 2 === 0,  'home-about-area' : index % 2 === 1}">
-            <div class="container">
-                <div class="row d-flex justify-content-center">
-                    <div class="menu-content pb-70 col-lg-10">
-                        <div class="title text-center">
-                            <h1 class="mb-10">{{ module.name }}</h1>
-
-                            <p></p>
-                        </div>
-                        <div class="">
-                            <ul class="unordered-list">
-                                <li v-for="submodule of module.submodules" style="margin-bottom: 10px">
-                                    <span style="color: #8490ff; padding-right: 5px"
-                                          v-if="submodule.addContent[0]">{{ submodule.addContent[0] }}</span>
-                                    <b style="color: #303030; font-weight: bold">{{submodule.title}}</b>
-                                    <span v-if="submodule.attaches[0]"><a :href="submodule.attaches[0]">[pdf]</a></span>
-                                    <!--                                    <a style="color: #777777; padding-left: 5px" v-if="submodule.attaches[0]" v-bind:href="submodule.attaches[0]">[pdf]</a>-->
-                                    <span style="color: #8490ff; padding-left: 5px"
-                                          v-if="submodule.addContent[4]">{{ submodule.addContent[4] }}</span>
-                                    <span class="float-right" style="color: #8490ff"
-                                          v-if="submodule.addContent[1]">{{ submodule.addContent[1] }}</span>
-                                    <p style="padding-bottom: 0; margin-bottom: 0" v-if="submodule.content"
-                                       v-html="submodule.content">
-                                        <!--                                        <em>{{ submodule.content }}</em>-->
-                                    </p>
-                                    <p style="color: #777777; padding-bottom: 0; margin-bottom: 0" class="comment"
-                                       v-if="submodule.addContent[2]" v-html="'In.&nbsp' + submodule.addContent[2]">
-                                        <!--                                         {{ submodule.addContent[2] }}-->
-
-                                    </p>
-                                    <p><b style="color: #ee3434; font-weight: bold" v-if="submodule.addContent[3]">
-                                        {{ submodule.addContent[3] }} </b></p>
-                                </li>
-                            </ul>
-                        </div>
+    <section id="Education" class="section-gap home-about-area">
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <div class="menu-content pb-70 col-lg-10">
+                    <div class="title text-center"><h1 class="mb-10">Education</h1>
+                        <p></p></div>
+                    <div>
+                        <ul class="unordered-list">
+                            <li style="margin-bottom: 10px;"><!----> <b
+                                    style="color: #303030; font-weight: bold;">Tianjin University</b> <!---->
+                                <span style="color: #8490ff; padding-left: 5px;">2004 - 2009</span> <!---->
+                                <p style="padding-bottom: 0px; margin-bottom: 0px;">Ph.D., Information System and
+                                    Information Management</p> <!----> <p><!----></p></li>
+                            <li style="margin-bottom: 10px;"><!----> <b
+                                    style="color: #303030; font-weight: bold;">Tianjin Unviersity</b> <!---->
+                                <span style="color: #8490ff; padding-left: 5px;">2002 - 2004</span> <!---->
+                                <p style="padding-bottom: 0px; margin-bottom: 0px;">Master,Computer Science</p> <!---->
+                                <p><!----></p></li>
+                            <li style="margin-bottom: 10px;"><!----> <b
+                                    style="color: #303030; font-weight: bold;">Tianjin Unviersity</b> <!---->
+                                <span style="color: #8490ff; padding-left: 5px;">1996 - 2000</span> <!---->
+                                <p style="padding-bottom: 0px; margin-bottom: 0px;">Bachelor,Applied Mathematics</p>
+                                <!----> <p><!----></p></li>
+                        </ul>
                     </div>
                 </div>
             </div>
-        </section>
-    </template>
-
-
-    <!--    <section class="timeline section-gap">-->
-    <!--        <div class="text-center">-->
-    <!--            <div class="menu-content pb-70">-->
-    <!--                <div class="title text-center">-->
-    <!--                    <h1 class="mb-10">Education Experience</h1>-->
-    <!--                    <p>Who are in extremely love with eco friendly system.</p>-->
-    <!--                </div>-->
-    <!--            </div>-->
-    <!--        </div>-->
-    <!--    </section>-->
-
-
-    <!--    &lt;!&ndash; Start brands Area &ndash;&gt;-->
-    <!--    <section class="brands-area">-->
-    <!--        <div class="container">-->
-    <!--            <div class="brand-wrap">-->
-    <!--                <div class="row align-items-center active-brand-carusel justify-content-start no-gutters">-->
-    <!--                    <div class="col single-brand">-->
-    <!--                        <a href="#"><img class="mx-auto" src="img/l1.png" alt=""></a>-->
-    <!--                    </div>-->
-    <!--                    <div class="col single-brand">-->
-    <!--                        <a href="#"><img class="mx-auto" src="img/l2.png" alt=""></a>-->
-    <!--                    </div>-->
-    <!--                    <div class="col single-brand">-->
-    <!--                        <a href="#"><img class="mx-auto" src="img/l3.png" alt=""></a>-->
-    <!--                    </div>-->
-    <!--                    <div class="col single-brand">-->
-    <!--                        <a href="#"><img class="mx-auto" src="img/l4.png" alt=""></a>-->
-    <!--                    </div>-->
-    <!--                    <div class="col single-brand">-->
-    <!--                        <a href="#"><img class="mx-auto" src="img/l5.png" alt=""></a>-->
-    <!--                    </div>-->
-    <!--                </div>-->
-    <!--            </div>-->
-    <!--        </div>-->
-    <!--    </section>-->
-    <!--    &lt;!&ndash; End brands Area &ndash;&gt;-->
-    <!--</div>-->
-
-
-    <!-- start footer Area -->
+        </div>
+    </section>
+    <section id="Projects" class="section-gap testimonial-area">
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <div class="menu-content pb-70 col-lg-10">
+                    <div class="title text-center"><h1 class="mb-10">Projects</h1>
+                        <p></p></div>
+                    <div>
+                        <ul class="unordered-list">
+                            <li style="margin-bottom: 10px;"><!----> <b
+                                    style="color: #303030; font-weight: bold;">Research on detecting, localizing
+                                concurrency bugs quickly and generating high quality patches automatically</b> <!---->
+                                <span style="color: #8490ff; padding-left: 5px;">2019 - 2022</span> <!---->
+                                <p style="padding-bottom: 0px; margin-bottom: 0px;">National Natural Science Foudation
+                                    of China</p> <!----> <p><!----></p></li>
+                            <li style="margin-bottom: 10px;"><!----> <b
+                                    style="color: #303030; font-weight: bold;">Research on the data management
+                                system for simulation testing of autonomous driving vehicle</b> <!----> <span
+                                    style="color: #8490ff; padding-left: 5px;">2019 - 2020</span> <!----> <p
+                                    style="padding-bottom: 0px; margin-bottom: 0px;">Intelligent manufacturing special
+                                fund of Tianjin</p> <!----> <p><!----></p></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="Conference" class="section-gap home-about-area">
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <div class="menu-content pb-70 col-lg-10">
+                    <div class="title text-center"><h1 class="mb-10">Conference</h1>
+                        <p></p></div>
+                    <div>
+                        <ul class="unordered-list">
+                            <li style="margin-bottom: 10px;"><!----> <b
+                                    style="color: #303030; font-weight: bold;">Prioritizing Test Inputs for Deep
+                                Neural Networks via Mutation Analysis .</b> <!----> <!----> <!----> <p
+                                    style="padding-bottom: 0px; margin-bottom: 0px;"><b
+                                    style="color: #0b0b0b; font-weight: bold">Zan Wang</b>, Hanmo You, Junjie Chen,
+                                Yingyi Zhang, Xuyuan Dong, Wenbin Zhang</p>
+                                <p class="comment"
+                                   style="color:#777777; padding-bottom: 0px; margin-bottom: 0px;">In.&nbsp;ICSE
+                                    2021 (toapear)</p>
+                                <p><!----></p></li>
+                            <li style="margin-bottom: 10px;"><!----> <b
+                                    style="color: #303030; font-weight: bold;">Semi-supervised Log-based Anomaly
+                                Detection via Probabilistic Label Estimation .</b> <!----> <!----> <!----> <p
+                                    style="padding-bottom: 0px; margin-bottom: 0px;">Lin Yang, Junjie Chen, <b
+                                    style="color: #0b0b0b; font-weight: bold">Zan Wang</b>, Weijing Wang, Jiajun Jiang,
+                                Xuyuan Dong and Wenbin Zhang</p>
+                                <p class="comment"
+                                   style="color:#777777; padding-bottom: 0px; margin-bottom: 0px;">In.&nbsp;ICSE
+                                    2021 (toapear)</p>
+                                <p><!----></p></li>
+                            <li style="margin-bottom: 10px;"><!----> <b
+                                    style="color: #303030; font-weight: bold;">IFiX : Fixing Concurrency Bugs
+                                While They Are Introduced .</b> <!----> <!----> <!----> <p
+                                    style="padding-bottom: 0px; margin-bottom: 0px;"><b
+                                    style="color: #0b0b0b; font-weight: bold">Zan Wang</b>, Haichi Wang, Shuang Liu*,
+                                Jun Sun, Haoyu Wang, Junjie Chen</p>
+                                <p class="comment"
+                                   style="color:#777777; padding-bottom: 0px; margin-bottom: 0px;">In.&nbsp;ICECCS
+                                    2020 (to appear)</p>
+                                <p><!----></p></li>
+                            <li style="margin-bottom: 10px;"><!----> <b
+                                    style="color: #303030; font-weight: bold;">Towards Generating Thread-Safe
+                                Classes Automatically .</b> <!----> <!----> <!----> <p
+                                    style="padding-bottom: 0px; margin-bottom: 0px;">Haichi Wang, <b
+                                    style="color: #0b0b0b; font-weight: bold">Zan Wang</b>, Jun Sun, Shuang Liu*, Ayesha
+                                Sadiq, Yuan-Fang Li</p>
+                                <p class="comment"
+                                   style="color:#777777; padding-bottom: 0px; margin-bottom: 0px;">In.&nbsp;ASE
+                                    2020, pages 943-955</p>
+                                <p><!----></p></li>
+                            <li style="margin-bottom: 10px;"><!----> <b
+                                    style="color: #303030; font-weight: bold;">Deep Learning Library Testing via
+                                Effective Model Generation .</b> <!----> <!----> <!----> <p
+                                    style="padding-bottom: 0px; margin-bottom: 0px;"><b
+                                    style="color: #0b0b0b; font-weight: bold">Zan Wang</b>, Ming Yan,Junjie Chen,Shuang
+                                Liu,Dongdi Zhang</p>
+                                <p class="comment"
+                                   style="color:#777777; padding-bottom: 0px; margin-bottom: 0px;">In.&nbsp;FSE
+                                    2020, pages 788-799</p>
+                                <p><!----></p></li>
+                            <li style="margin-bottom: 10px;"><!----> <b
+                                    style="color: #303030; font-weight: bold;">MAP-Coverage: A Novel Coverage
+                                Criterion for Testing Thread-Safe Classes .</b> <!----> <!----> <!----> <p
+                                    style="padding-bottom: 0px; margin-bottom: 0px;"><b
+                                    style="color: #0b0b0b; font-weight: bold">Zan Wang</b>,Yingquan Zhao,Shuang Liu,Jun
+                                Sun,Xiang Chen,Huarui Lin</p>
+                                <p class="comment"
+                                   style="color:#777777; padding-bottom: 0px; margin-bottom: 0px;">In.&nbsp;ASE
+                                    2019, pages 722--734</p>
+                                <p><!----></p></li>
+                            <li style="margin-bottom: 10px;"><!----> <b
+                                    style="color: #303030; font-weight: bold;">TECCD: A Tree Embedding Approach
+                                for Code Clone Detection .</b> <!----> <!----> <!----> <p
+                                    style="padding-bottom: 0px; margin-bottom: 0px;">Yi Gao,<b
+                                    style="color: #0b0b0b; font-weight: bold">Zan Wang</b>,Shuang Liu,Lin Yang,Wei
+                                Sang,Yuanfang Cai</p>
+                                <p class="comment"
+                                   style="color:#777777; padding-bottom: 0px; margin-bottom: 0px;">In.&nbsp;ICSME
+                                    2019, pages 145-156</p>
+                                <p><!----></p></li>
+                            <li style="margin-bottom: 10px;"><!----> <b
+                                    style="color: #303030; font-weight: bold;">Adaptive Randomized Scheduling
+                                for Concurrency Bug Detection .</b> <!----> <!----> <!----> <p
+                                    style="padding-bottom: 0px; margin-bottom: 0px;"><b
+                                    style="color: #0b0b0b; font-weight: bold">Zan Wang</b>,Dongdi Zhang,Shuang Liu,Jun
+                                Sun,Yingquan Zhao</p>
+                                <p class="comment"
+                                   style="color:#777777; padding-bottom: 0px; margin-bottom: 0px;">In.&nbsp;ICECCS
+                                    2019, pages 124--133</p>
+                                <p><!----></p></li>
+                            <li style="margin-bottom: 10px;"><!----> <b
+                                    style="color: #303030; font-weight: bold;">PFix: fixing concurrency bugs
+                                based on memory access patterns .</b> <!----> <!----> <!----> <p
+                                    style="padding-bottom: 0px; margin-bottom: 0px;">Huarui Lin,<b
+                                    style="color: #0b0b0b; font-weight: bold">Zan Wang</b>,Shuang Liu,Jun Sun,Dongdi
+                                Zhang,Guangning Wei</p>
+                                <p class="comment"
+                                   style="color:#777777; padding-bottom: 0px; margin-bottom: 0px;">In.&nbsp;ASE
+                                    2018: 589-600</p>
+                                <p><!----></p></li>
+                            <li style="margin-bottom: 10px;"><!----> <b
+                                    style="color: #303030; font-weight: bold;">A Clustering-Bayesian Network
+                                Based Approach for Test Case Prioritization .</b> <!----> <!----> <!----> <p
+                                    style="padding-bottom: 0px; margin-bottom: 0px;">Xiaobin Zhao,<b
+                                    style="color: #0b0b0b; font-weight: bold">Zan Wang</b>,Xiangyu Fan,Zhenhua Wang</p>
+                                <p class="comment"
+                                   style="color:#777777; padding-bottom: 0px; margin-bottom: 0px;">In.&nbsp;COMPSAC
+                                    Workshops 2015: 542-547</p>
+                                <p><!----></p></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="Journal-Report" class="section-gap testimonial-area">
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <div class="menu-content pb-70 col-lg-10">
+                    <div class="title text-center"><h1 class="mb-10">Journal/Report</h1>
+                        <p></p></div>
+                    <div>
+                        <ul class="unordered-list">
+                            <li style="margin-bottom: 10px;"><!----> <b
+                                    style="color: #303030; font-weight: bold;">Practical Accuracy Estimation for
+                                Efficient Deep Neural Network Testing[J] .</b> <!----> <!----> <!----> <p
+                                    style="padding-bottom: 0px; margin-bottom: 0px;">Junjie Chen,Zhuo Wu,<b
+                                    style="color: #0b0b0b; font-weight: bold">Zan Wang</b>,Hanmo You,Lingming Zhang,Ming
+                                Yan</p>
+                                <p class="comment"
+                                   style="color:#777777; padding-bottom: 0px; margin-bottom: 0px;">In.&nbsp;ACM
+                                    Transactions on Software Engineering and Methodology (TOSEM) 2020, 29(4): 1-35</p>
+                                <p><!----></p></li>
+                            <li style="margin-bottom: 10px;"><!----> <b
+                                    style="color: #303030; font-weight: bold;">深度神经网络测试研究综述[J] .</b> <!---->
+                                <!----> <!----> <p style="padding-bottom: 0px; margin-bottom: 0px;">
+                                    王赞,闫明,刘爽,陈俊洁,张栋迪,吴卓,陈翔</p>
+                                <p class="comment"
+                                   style="color:#777777; padding-bottom: 0px; margin-bottom: 0px;">In.&nbsp;软件学报,
+                                    2020, 31(5): 1255-1275</p>
+                                <p><!----></p></li>
+                            <li style="margin-bottom: 10px;"><!----> <b
+                                    style="color: #303030; font-weight: bold;">Large-Scale Empirical Studies on
+                                Effort-Aware Security Vulnerability Prediction Methods .</b> <!----> <!----> <!----> <p
+                                    style="padding-bottom: 0px; margin-bottom: 0px;">Xiang Chen,Yingquan Zhao,Zhanqi
+                                Cui,Guozhu Meng,Yang Liu,<b style="color: #0b0b0b; font-weight: bold">Zan Wang</b></p>
+                                <p class="comment"
+                                   style="color:#777777; padding-bottom: 0px; margin-bottom: 0px;">In.&nbsp;Transactions
+                                    on Reliability 2019, 69(1): 70-87</p>
+                                <p><!----></p></li>
+                            <li style="margin-bottom: 10px;"><!----> <b
+                                    style="color: #303030; font-weight: bold;">Localizing multiple software
+                                faults based on evolution algorithm .</b> <!----> <!----> <!----> <p
+                                    style="padding-bottom: 0px; margin-bottom: 0px;">Yan Zheng,<b
+                                    style="color: #0b0b0b; font-weight: bold">Zan Wang</b>,Xiangyu Fan,Xiang
+                                Chen,Zijiang Yang</p>
+                                <p class="comment"
+                                   style="color:#777777; padding-bottom: 0px; margin-bottom: 0px;">In.&nbsp;Journal
+                                    of Systems and Software. 139: 107-123 (2018)</p>
+                                <p><!----></p></li>
+                            <li style="margin-bottom: 10px;"><!----> <b
+                                    style="color: #303030; font-weight: bold;">A systematic survey on automated
+                                concurrency bug detection, exposing, avoidance, and fixing techniques .</b> <!---->
+                                <!----> <!----> <p style="padding-bottom: 0px; margin-bottom: 0px;">Haojie Fu,<b
+                                        style="color: #0b0b0b; font-weight: bold">Zan Wang</b>,Xiang Chen,Xiangyu Fan
+                                </p>
+                                <p class="comment"
+                                   style="color:#777777; padding-bottom: 0px; margin-bottom: 0px;">In.&nbsp;Software
+                                    Quality Journal 26(3): 855-889 (2018)</p>
+                                <p><!----></p></li>
+                            <li style="margin-bottom: 10px;"><!----> <b
+                                    style="color: #303030; font-weight: bold;">An Adaptive Markov Strategy for
+                                Defending Smart Grid False Data Injection From Malicious Attackers .</b> <!----> <!---->
+                                <!----> <p style="padding-bottom: 0px; margin-bottom: 0px;">Jianye Hao,Eunsuk Kang,Jun
+                                    Sun,<b style="color: #0b0b0b; font-weight: bold">Zan Wang</b>,Zhaopeng Meng,Xiaohong
+                                    Li,Zhong Ming</p>
+                                <p class="comment"
+                                   style="color:#777777; padding-bottom: 0px; margin-bottom: 0px;">In.&nbsp;Transactions
+                                    on Smart Grid 9(4): 2398-2408 (2016)</p>
+                                <p><!----></p></li>
+                            <li style="margin-bottom: 10px;"><!----> <b
+                                    style="color: #303030; font-weight: bold;">跨项目软件缺陷预测方法研究综述 .</b> <!---->
+                                <!----> <!----> <p style="padding-bottom: 0px; margin-bottom: 0px;">
+                                    陈翔,王莉萍,顾庆,王赞,倪超,刘望舒,王秋萍</p>
+                                <p class="comment"
+                                   style="color:#777777; padding-bottom: 0px; margin-bottom: 0px;">In.&nbsp;计算机学报,2018,
+                                    41(1), 254-274</p>
+                                <p><!----></p></li>
+                            <li style="margin-bottom: 10px;"><!----> <b
+                                    style="color: #303030; font-weight: bold;">自动程序修复方法研究述评[J] .</b> <!---->
+                                <!----> <!----> <p style="padding-bottom: 0px; margin-bottom: 0px;">王赞,郜健,陈翔,傅浩杰,樊向宇</p>
+                                <p class="comment"
+                                   style="color:#777777; padding-bottom: 0px; margin-bottom: 0px;">In.&nbsp;计算机学报,
+                                    2018, 41(3): 588-610</p>
+                                <p><!----></p></li>
+                            <li style="margin-bottom: 10px;"><!----> <b
+                                    style="color: #303030; font-weight: bold;">Improved Annealing-Genetic
+                                Algorithm for Test Case Prioritization .</b> <!----> <!----> <!----> <p
+                                    style="padding-bottom: 0px; margin-bottom: 0px;"><b
+                                    style="color: #0b0b0b; font-weight: bold">Zan Wang</b>, Xiaobin Zhao, Yuguo Zou, Xue
+                                Yu, Zhenhua Wang</p>
+                                <p class="comment"
+                                   style="color:#777777; padding-bottom: 0px; margin-bottom: 0px;">In.&nbsp;Computing
+                                    and Informatics 36(3): 705-732 (2017)</p>
+                                <p><!----></p></li>
+                            <li style="margin-bottom: 10px;"><!----> <b
+                                    style="color: #303030; font-weight: bold;">一种半监督集成跨项目软件缺陷预测方法 .</b> <!---->
+                                <!----> <!----> <p style="padding-bottom: 0px; margin-bottom: 0px;">
+                                    何吉元,孟昭鹏,陈翔,王赞,樊向宇</p>
+                                <p class="comment"
+                                   style="color:#777777; padding-bottom: 0px; margin-bottom: 0px;">In.&nbsp;Journal
+                                    of Software,28(6)(2017)</p>
+                                <p><!----></p></li>
+                            <li style="margin-bottom: 10px;"><!----> <b
+                                    style="color: #303030; font-weight: bold;">一种基于遗传算法的多缺陷定位方法 .</b> <!---->
+                                <!----> <!----> <p style="padding-bottom: 0px; margin-bottom: 0px;">王赞,樊向宇,邹雨果,陈翔</p>
+                                <p class="comment"
+                                   style="color:#777777; padding-bottom: 0px; margin-bottom: 0px;">In.&nbsp;Journal
+                                    of Software, 4, 879-900.(2016)</p>
+                                <p><!----></p></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="Teaching" class="section-gap home-about-area">
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <div class="menu-content pb-70 col-lg-10">
+                    <div class="title text-center"><h1 class="mb-10">Teaching</h1>
+                        <p></p></div>
+                    <div>
+                        <ul class="unordered-list">
+                            <li style="margin-bottom: 10px;"><!----> <b
+                                    style="color: #303030; font-weight: bold;">Software Testing</b> <!---->
+                                <!----> <!----> <!----> <!----> <p><!----></p></li>
+                            <li style="margin-bottom: 10px;"><!----> <b
+                                    style="color: #303030; font-weight: bold;">Advanced JAVA Programming</b>
+                                <!----> <!----> <!----> <!----> <!----> <p><!----></p></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <footer class="footer-area section-gap">
         <p class="footer-text text-center">
             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
@@ -194,82 +419,28 @@
             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
 
     </footer>
-    <!-- End footer Area -->
+</div>
 
-    <script src="../js/vendor/jquery-2.2.4.min.js"></script>
-    <script src="../js/popper.min.js"></script>
-    <script src="../js/vendor/bootstrap.min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
-    <script src="../js/easing.min.js"></script>
-    <script src="../js/hoverIntent.js"></script>
-    <script src="../js/superfish.min.js"></script>
-    <script src="../js/jquery.ajaxchimp.min.js"></script>
-    <script src="../js/jquery.magnific-popup.min.js"></script>
-    <script src="../js/jquery.tabs.min.js"></script>
-    <script src="../js/jquery.nice-select.min.js"></script>
-    <script src="../js/isotope.pkgd.min.js"></script>
-    <script src="../js/waypoints.min.js"></script>
-    <script src="../js/jquery.counterup.min.js"></script>
-    <script src="../js/simple-skillbar.js"></script>
-    <script src="../js/owl.carousel.min.js"></script>
-    <script src="../js/mail-script.js"></script>
-    <script src="../js/main.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-    <!--<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>-->
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script>
-        var parse_data = function (data) {
-            for (var i = 0; i < data.modules.length; i++) {
-                var module = data.modules[i];
-                module.module_id = module.name.trim().replace(/[\s\/]/g, "-");
-                // console.log(module.module_id);
-                for (var j = 0; j < module.submodules.length; j++) {
-                    // console.log(module.submodules[j]);
-                    var content = module.submodules[j].content;
-                    if (content !== null && content.includes(data.english_name)) {
-                        var s = data.english_name;
-                        var t = '<b style="color: #0b0b0b; font-weight: bold">' + s + '</b>';
-                        if (content.includes(s + '*')) {
-                            s = s + '*';
-                            t = '<b style="color: #0b0b0b; font-weight: bold">' + s + '</b>';
-                        }
-                        content = content.replace(s, t);
-                        // content = '<em>' + content + '</em>';
-                        data.modules[i].submodules[j].content = content;
-                    }
-                    // console.log(content);
-                }
-            }
-            return data
-        }
-        new Vue({
-            el: '#container',
-            data() {
-                return {
-                    info: {
-                        'name': '',
-                        'address': '',
-                        'avatar': '',
-                        'email': '',
-                        'english_name': '',
-                        'institution': '',
-                        'intro': '',
-                        'school': '',
-                        'modules': [],
+<script src="../js/vendor/jquery-2.2.4.min.js"></script>
+<script src="../js/popper.min.js"></script>
+<script src="../js/vendor/bootstrap.min.js"></script>
+<!--    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>-->
+<script src="../js/easing.min.js"></script>
+<script src="../js/hoverIntent.js"></script>
+<script src="../js/superfish.min.js"></script>
+<script src="../js/jquery.ajaxchimp.min.js"></script>
+<script src="../js/jquery.magnific-popup.min.js"></script>
+<script src="../js/jquery.tabs.min.js"></script>
+<script src="../js/jquery.nice-select.min.js"></script>
+<script src="../js/isotope.pkgd.min.js"></script>
+<script src="../js/waypoints.min.js"></script>
+<script src="../js/jquery.counterup.min.js"></script>
+<script src="../js/simple-skillbar.js"></script>
+<script src="../js/owl.carousel.min.js"></script>
+<script src="../js/mail-script.js"></script>
+<script src="../js/main.js"></script>
 
-                    }
-                }
-            },
-            mounted() {
-                axios.get('https://lab-api.liebes.top/api/teacher/1')
-                    .then(response => {
-                        this.info = parse_data(response.data)
-                    })
-            }
-
-        })
-    </script>
 
 
 </body>
