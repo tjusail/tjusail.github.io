@@ -499,32 +499,33 @@
         let load_avatars = function(){
             let avatars = [
 
-                {name: 'Gan Wang', file: '王淦.png', desc: 'Good good study, day day up.', type: 'postgraduate'},
-                {name: 'Junjie Yang', file: '杨骏洁.png', desc: 'Stay hungry, stay foolish.', type: 'postgraduate'},
-                {name: 'Xuyang Chen', file: '陈旭扬.png', desc: 'Talk is cheap,show me the code', type: 'postgraduate'},
-                {name: 'yan Wan', file: '万焱.png', desc: 'Practice makes perfect.', type: 'postgraduate'},
-                {name: 'Ming Yan', file: '闫明.png', desc: '***是个大烧饼', type: 'phd'},
-                {name: 'TianJie Jiang', file: '姜天杰.png', desc: 'Live a life without fear.', type: 'postgraduate'},
-                {name: 'Huarii Lin', file: '林华睿.png', desc: 'Good good study', type: 'graduate'},
-                {name: 'Qiuxian Long', file: '龙秋娴.png', desc: 'Benefits please like flowers,while they are fresh.', type: 'graduate'},
-                {name: 'Zhao TIAN', file: '田朝.png', desc: 'Delayed Gratification.', type: 'postgraduate'},
-                {name: 'Hanmo You', file: '尤翰墨.png', desc: '做一个不需要西红柿的人', type: 'phd'},
-                {name: 'Yumeng Wang', file: '王雨萌.png', desc: '周一要有周一的态度，周五同理', type: 'postgraduate'},
-                {name: 'Qingchao Shen', file: '沈庆超.png', desc: 'qingchao@tju.edu.cn', type: 'postgraduate'},
-                {name: 'Yihua Liang', file: '梁益华.png', desc: 'liangyihua@tju.edu.cn', type: 'postgraduate'},
-                {name: 'Shuochuan Li', file: '李硕川.png', desc: 'Pain past is pleasure', type: 'postgraduate'},
-                {name: 'Jiangshan Liu', file: '刘江山.png', desc: 'It\'s our privilege and our adventure to discover our own special light.', type: 'postgraduate'},
-                {name: 'Tianchang Gao', file: '高天畅.png', desc: 'Live in the present, loyal to the ideal', type: 'postgraduate'},
-                {name: 'Chen Yang', file: '杨晨.png', desc: 'imaginative freedom', type: 'postgraduate'},
-                {name: 'Yingquan Zhao', file: '赵英全.png', desc: 'Strive not to be a success, but rather to be of value.', type: 'phd'},
-                {name: 'Mengjiao Liu', file: '刘梦娇.png', desc: 'through hardships to the stars', type: 'postgraduate'},
-                {name: 'Haichi Wang', file: 'whc.png', desc: 'Good good study, day day up.', type: 'phd'},
+                {name: 'Gan Wang', file: '王淦.png', desc: 'Good good study, day day up.', type: 'postgraduate', url: '#'},
+                {name: 'Junjie Yang', file: '杨骏洁.png', desc: 'Stay hungry, stay foolish.', type: 'postgraduate', url: '#'},
+                {name: 'Xuyang Chen', file: '陈旭扬.png', desc: 'Talk is cheap,show me the code.', type: 'postgraduate', url: '#'},
+                {name: 'Yan Wan', file: '万焱.png', desc: 'Practice makes perfect.', type: 'postgraduate', url: '#'},
+                {name: 'Ming Yan', file: '闫明.png', desc: 'yanming@tju.edu.cn', type: 'phd', url: 'https://yanming-cn.github.io/'},
+                {name: 'TianJie Jiang', file: '姜天杰.png', desc: 'Live a life without fear.', type: 'postgraduate', url: '#'},
+                {name: 'Huarui Lin', file: '林华睿.png', desc: 'Good good study.', type: 'graduate', url: '#'},
+                {name: 'Qiuxian Long', file: '龙秋娴.png', desc: 'Benefits please like flowers,while they are fresh.', type: 'graduate', url: '#'},
+                {name: 'Zhao Tian', file: '田朝.png', desc: 'Delayed Gratification.', type: 'postgraduate', url: 'https://tianzhaotju.github.io/index.html'},
+                {name: 'Hanmo You', file: '尤翰墨.png', desc: '做一个不需要西红柿的人', type: 'phd', url: '#'},
+                {name: 'Yumeng Wang', file: '王雨萌.png', desc: '周一要有周一的态度，周五同理', type: 'postgraduate', url: '#'},
+                {name: 'Qingchao Shen', file: '沈庆超.png', desc: 'qingchao@tju.edu.cn', type: 'postgraduate', url: '#'},
+                {name: 'Yihua Liang', file: '梁益华.png', desc: 'liangyihua@tju.edu.cn', type: 'postgraduate', url: '#'},
+                {name: 'Shuochuan Li', file: '李硕川.png', desc: 'Pain past is pleasure', type: 'postgraduate', url: '#'},
+                {name: 'Jiangshan Liu', file: '刘江山.png', desc: 'It\'s our privilege and our adventure to discover our own special light.', type: 'postgraduate', url: '#'},
+                {name: 'Tianchang Gao', file: '高天畅.png', desc: 'Live in the present, loyal to the ideal', type: 'postgraduate', url: '#'},
+                {name: 'Chen Yang', file: '杨晨.png', desc: 'Imaginative freedom.', type: 'postgraduate', url: '#'},
+                {name: 'Yingquan Zhao', file: '赵英全.png', desc: 'Strive not to be a success, but rather to be of value.', type: 'phd', url: '#'},
+                {name: 'Mengjiao Liu', file: '刘梦娇.png', desc: 'Through hardships to the stars.', type: 'postgraduate', url: '#'},
+                {name: 'Haichi Wang', file: '王海弛.png', desc: 'Good good study, day day up.', type: 'phd', url: '#'},
+                {name: 'Haoyu Wang', file: '王昊宇.png', desc: 'Believe.', type: 'postgraduate', url: '#'},
 
             ]
             let item = "<div class=\"col-lg-3 col-md-4 col-sm-6 pb-30\">\n" +
                 "                    <div class=\"single-sidebar-widget user-info-widget text-center\">\n" +
-                "                        <img src=\"img/blog/user-info.png\" alt=\"\">\n" +
-                "                        <a href=\"#\"><h4 class='pt-10'>Charlie Barber</h4></a>\n" +
+                "                        <a href=\"#\"><img src=\"img/blog/user-info.png\" alt=\"\">\n" +
+                "                        <h4 class='pt-10'>Charlie Barber</h4></a>\n" +
                 "                        <p>\n" +
                 "                            Senior blog writer\n" +
                 "                        </p>\n" +
@@ -535,6 +536,7 @@
                 $(dom_item.find("h4")[0]).text(v.name)
                 $(dom_item.find("p")[0]).text(v.desc)
                 $(dom_item.find("img")[0]).attr('src', 'img/avatars/' + v.file)
+                $(dom_item.find("a")[0]).attr('href', v.url)
                 $('#' + v.type).append(dom_item)
             })
         }
