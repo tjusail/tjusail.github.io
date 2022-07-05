@@ -294,7 +294,7 @@
 </section>
 
 
-<div id="gallery" class="section-top-border section-gap">
+<section id="gallery" class="section-top-border section-gap">
     <div class="container">
         <div class="row d-flex justify-content-center">
             <div class="menu-content pb-70 col-lg-8">
@@ -306,35 +306,101 @@
                 </div>
             </div>
         </div>
-        <div class="row gallery-item">
-            <template v-for="item in info[0]">
-                <div class="col-md-4">
-                    <a v-bind:href="item.path" class="img-gal">
-                        <div class="single-gallery-image" v-bind:style="{background: 'url(' + item.path + ')'}">
-                        </div>
-                    </a>
-                </div>
-            </template>
-            <template v-for="item in info[1]">
-                <div class="col-md-6">
-                    <a v-bind:href="item.path" class="img-gal">
-                        <div class="single-gallery-image" v-bind:style="{background: 'url(' + item.path + ')'}">
-                        </div>
-                    </a>
-                </div>
-            </template>
-            <template v-for="item in info[2]">
-                <div class="col-md-4">
-                    <a v-bind:href="item.path" class="img-gal">
-                        <div class="single-gallery-image" v-bind:style="{background: 'url(' + item.path + ')'}">
-                        </div>
-                    </a>
-                </div>
-            </template>
+        <div class="row gallery-item" id="pic_list_1">
+            <div class="col-md-4">
+                <a href="img/index_pictures/index_pic_1.jpg">
+                    <div class="single-gallery-image" style="background: url(img/index_pictures/index_pic_1.jpg)">
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="img/index_pictures/index_pic_2.jpg">
+                    <div class="single-gallery-image" style="background: url(img/index_pictures/index_pic_2.jpg)">
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="img/index_pictures/index_pic_3.jpg">
+                    <div class="single-gallery-image" style="background: url(img/index_pictures/index_pic_3.jpg)">
+                    </div>
+                </a>
+            </div>
         </div>
+        <div class="row gallery-item" id="pic_list_2">
+            <div class="col-md-6">
+                <a href="img/index_pictures/index_pic_4.jpg">
+                    <div class="single-gallery-image" style="background: url(img/index_pictures/index_pic_4.jpg)">
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-6">
+                <a href="img/index_pictures/index_pic_5.jpg" class="img-gal">
+                    <div class="single-gallery-image" style="background: url(img/index_pictures/index_pic_5.jpg)">
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="row gallery-item" id="pic_list_3">
+            <div class="col-md-4">
+                <a href="img/index_pictures/index_pic_6.jpg">
+                    <div class="single-gallery-image" style="background: url(img/index_pictures/index_pic_6.jpg)">
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="img/index_pictures/index_pic_7.jpg" class="img-gal">
+                    <div class="single-gallery-image" style="background: url(img/index_pictures/index_pic_7.jpg)">
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="img/index_pictures/index_pic_8.jpg" class="img-gal">
+                    <div class="single-gallery-image" style="background: url(img/index_pictures/index_pic_8.jpg)">
+                    </div>
+                </a>
+            </div>
+        </div>
+
     </div>
 
-</div>
+</section>
+
+
+<!--<section class="testimonial-area section-gap">-->
+<!--    <div class="container">-->
+<!--        <div class="row d-flex justify-content-center">-->
+<!--            <div class="menu-content pb-70 col-lg-8">-->
+<!--                <div class="title text-center">-->
+<!--                    <h1 class="mb-10">STUDENTS</h1>-->
+<!--                    <p>Think a sentence, thank you</p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="section-top-border text-center">-->
+<!--            <h3 class="mb-60">PhD Student</h3>-->
+<!--            <div class="row" id="phd">-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="section-top-border  text-center">-->
+<!--            <h3 class="mb-30">Postgraduate</h3>-->
+<!--            <div class="row" id="postgraduate">-->
+
+<!--            </div>-->
+<!--        </div>-->
+<!--&lt;!&ndash;        <div class="section-top-border text-center">&ndash;&gt;-->
+<!--&lt;!&ndash;            <h3 class="mb-30">Undergraduate</h3>&ndash;&gt;-->
+<!--&lt;!&ndash;            <div class="row" id="undergraduate">&ndash;&gt;-->
+
+<!--&lt;!&ndash;            </div>&ndash;&gt;-->
+<!--&lt;!&ndash;        </div>&ndash;&gt;-->
+<!--        <div class="section-top-border text-center">-->
+<!--            <h3 class="mb-30">Graduate</h3>-->
+<!--            <div class="row" id="graduate">-->
+
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</section>-->
 
 
 <!-- start footer Area -->
@@ -370,48 +436,7 @@
 <script src="js/mail-script.js"></script>
 <script src="js/main.js"></script>
 
-
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script>
-    var parse_data = function (data, pre_data) {
-        console.log(data)
-        for (var i = 0; i < data.length; i++) {
-            pre_data[i] = data[i];
-        }
-        // 将数组拆分成三行，第一行和第三行3张图片，第二行两张图片
-        var res = [
-            [pre_data[0], pre_data[1], pre_data[2]],
-            [pre_data[3], pre_data[4]],
-            [pre_data[5], pre_data[6], pre_data[7]]
-        ]
-        console.log(res[0])
-        return res;
-    }
-    new Vue({
-        el: '#gallery',
-        data() {
-            return {
-                info: [
-                    {'path': 'img/elements/g1.jpg', name: 'temp'},
-                    {'path': 'img/elements/g2.jpg', name: 'temp'},
-                    {'path': 'img/elements/g3.jpg', name: 'temp'},
-                    {'path': 'img/elements/g4.jpg', name: 'temp'},
-                    {'path': 'img/elements/g5.jpg', name: 'temp'},
-                    {'path': 'img/elements/g6.jpg', name: 'temp'},
-                    {'path': 'img/elements/g7.jpg', name: 'temp'},
-                    {'path': 'img/elements/g8.jpg', name: 'temp'},
-                ]
-            }
-        },
-        mounted() {
-            axios.get('https://lab-api.liebes.top/api/gallery/index')
-                .then(response => {
-                    console.log(response);
-                    this.info = parse_data(response.data, this.info)
-                })
-        }
-    })
     $(document).ready(function () {
         $('#wz-block').click(function () {
             $(location).attr("href", "./people/wangzan.html")
@@ -436,6 +461,73 @@
         $('#jjj-block').click(function () {
             $(location).attr("href", "https://xgdsmileboy.github.io/")
         });
+    })
+
+    $(document).ready(function () {
+        let random_pic = function () {
+            const max_pic = 27
+            const arr = [...new Array(max_pic + 1).keys()]
+            arr.shift()
+
+            const rand = arr.sort(() => Math.random() - 0.5).slice(0, 8)
+            console.log(rand)
+
+            let pic_index = 0
+
+            $('#pic_list_1').find("a").each(function (index, item) {
+                $(item).attr('href', `img/index_pictures/index_pic_${rand[pic_index]}.jpg`)
+                $(item).children().each(function (sub_idx, sub_item) {
+                    $(sub_item).css('background', `url(img/index_pictures/index_pic_${rand[pic_index++]}.jpg)`)
+                })
+            })
+
+            $('#pic_list_2').find("a").each(function (index, item) {
+                $(item).attr('href', `img/index_pictures/index_pic_${rand[pic_index]}.jpg`)
+                $(item).children().each(function (sub_idx, sub_item) {
+                    $(sub_item).css('background', `url(img/index_pictures/index_pic_${rand[pic_index++]}.jpg)`)
+                })
+            })
+
+            $('#pic_list_3').find("a").each(function (index, item) {
+                $(item).attr('href', `img/index_pictures/index_pic_${rand[pic_index]}.jpg`)
+                $(item).children().each(function (sub_idx, sub_item) {
+                    $(sub_item).css('background', `url(img/index_pictures/index_pic_${rand[pic_index++]}.jpg)`)
+                })
+            })
+        }
+
+        let load_avatars = function(){
+            let avatars = [
+                {name: 'Haichi Wang', file: 'whc.png', desc: 'Good good study, day day up.', type: 'phd'},
+                {name: 'Haichi Wang', file: 'whc.png', desc: 'Good good study, day day up.', type: 'phd'},
+                {name: 'Haichi Wang', file: 'whc.png', desc: 'Good good study, day day up.', type: 'phd'},
+                {name: 'Haichi Wang', file: 'whc.png', desc: 'Good good study, day day up.', type: 'phd'},
+                {name: 'Haichi Wang', file: 'whc.png', desc: 'Good good study, day day up.', type: 'postgraduate'},
+                {name: 'Haichi Wang', file: 'whc.png', desc: 'Good good study, day day up.', type: 'phd'},
+                {name: 'Haichi Wang', file: 'whc.png', desc: 'Good good study, day day up.', type: 'phd'},
+                {name: 'Haichi Wang', file: 'whc.png', desc: 'Good good study, day day up.', type: 'phd'},
+                {name: 'Haichi Wang', file: 'whc.png', desc: 'Good good study, day day up.', type: 'phd'},
+
+            ]
+            let item = "<div class=\"col-lg-3 col-md-4 col-sm-6 pb-30\">\n" +
+                "                    <div class=\"single-sidebar-widget user-info-widget text-center\">\n" +
+                "                        <img src=\"img/blog/user-info.png\" alt=\"\">\n" +
+                "                        <a href=\"#\"><h4 class='pt-10'>Charlie Barber</h4></a>\n" +
+                "                        <p>\n" +
+                "                            Senior blog writer\n" +
+                "                        </p>\n" +
+                "                    </div>\n" +
+                "                </div>"
+            avatars.forEach(function(v){
+                let dom_item = $(item)
+                $(dom_item.find("h4")[0]).text(v.name)
+                $(dom_item.find("p")[0]).text(v.desc)
+                $(dom_item.find("img")[0]).attr('src', 'img/avatars/' + v.file)
+                $('#' + v.type).append(dom_item)
+            })
+        }
+        // load_avatars()
+        random_pic()
     })
 
 
