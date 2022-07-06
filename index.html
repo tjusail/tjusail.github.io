@@ -507,11 +507,12 @@
                 {name: 'Xuyang Chen', file: '陈旭扬.png', desc: 'Talk is cheap,show me the code.', type: 'postgraduate', url: '#'},
                 {name: 'Yan Wan', file: '万焱.png', desc: 'Practice makes perfect.', type: 'postgraduate', url: '#'},
                 {name: 'Ming Yan', file: '闫明.png', desc: 'It is no use doing what you like; you have got to like what you do.', type: 'phd', url: 'https://yanming-cn.github.io/'},
-                {name: 'TianJie Jiang', file: '姜天杰.png', desc: 'Live a life without fear.', type: 'postgraduate', url: '#'},
-                {name: 'Huarui Lin', file: '林华睿.png', desc: 'Good good study.', type: 'graduate', url: '#'},
+                {name: 'Zhuo Wu', file: '吴卓.png', desc: 'Don’t cry over split milk', type: 'phd', url: '#'},
+                {name: 'Tianjie Jiang', file: '姜天杰.png', desc: 'Live a life without fear.', type: 'postgraduate', url: '#'},
+                {name: 'Huarui Lin', file: '林华睿.png', desc: 'Good good study,', type: 'graduate', url: '#'},
+                {name: 'Gaoyi', file: '高毅.png', desc: 'day day up.', type: 'graduate', url: '#'},
                 {name: 'Qiuxian Long', file: '龙秋娴.png', desc: 'Benefits please like flowers,while they are fresh.', type: 'graduate', url: '#'},
                 {name: 'Zhao Tian', file: '田朝.png', desc: 'Delayed Gratification.', type: 'postgraduate', url: 'https://tianzhaotju.github.io/index.html'},
-                {name: 'Hanmo You', file: '尤翰墨.png', desc: '做一个不需要西红柿的人', type: 'phd', url: '#'},
                 {name: 'Yumeng Wang', file: '王雨萌.png', desc: '周一要有周一的态度，周五同理', type: 'postgraduate', url: '#'},
                 {name: 'Qingchao Shen', file: '沈庆超.png', desc: 'qingchao@tju.edu.cn', type: 'postgraduate', url: '#'},
                 {name: 'Yihua Liang', file: '梁益华.png', desc: 'liangyihua@tju.edu.cn', type: 'postgraduate', url: '#'},
@@ -527,14 +528,19 @@
                 {name: 'Xuejie Cao', file: '曹雪洁.png', desc: 'The best is yet to come.', type: 'postgraduate', url: '#'},
                 {name: 'Lin Yang', file: '杨林.png', desc: 'Follow Excellence. Success will chase you.', type: 'phd', url: 'https://scholar.google.com/citations?user=hJows8QAAAAJ&hl=zh-CN'},
                 {name: 'Wei Sang', file: '桑炜.png', desc: 'Just love life', type: 'graduate', url: '#'},
-                {name: 'Zhuo Wu', file: '吴卓.png', desc: 'Don’t cry over split milk', type: 'phd', url: '#'},
                 {name: 'Shujie Dou', file: '窦淑洁.png', desc: 'No sports, no life.', type: 'postgraduate', url: '#'},
                 {name: 'Kai Zheng', file: '郑开.png', desc: 'Life is short, don\'t use python.', type: 'postgraduate', url: '#'},
+                {name: 'Hanmo You', file: '尤翰墨.png', desc: '做一个不需要西红柿的人', type: 'phd', url: '#'},
+                {name: 'Zhichao Chen', file: '陈志超.png', desc: 'Be swift to hear, slow to speak.', type: 'postgraduate', url: '#'},
+                {name: 'Chenyao Suo', file: '索宸耀.png', desc: '就这张照片 还是我扒拉QQ空间找的', type: 'postgraduate', url: '#'},
+                {name: 'Xiaoyun Cheng', file: '成肖云.png', desc: 'You are your only limit.', type: 'graduate', url: '#'},
+
+
             ]
             //="{name: '"&B1&"', file: '"&A1&".png', desc: '"&D1&"', type: '"&C1&"', url: '"&E1&"'}, "
             let item = "<div class=\"col-lg-3 col-md-4 col-sm-6 pb-30\">\n" +
                 "                    <div class=\"single-sidebar-widget user-info-widget text-center\">\n" +
-                "                        <a href=\"#\"><img src=\"img/blog/user-info.png\" alt=\"\">\n" +
+                "                        <a target=\"_blank\"><img src=\"img/blog/user-info.png\" alt=\"\">\n" +
                 "                        <h4 class='pt-10'>Charlie Barber</h4></a>\n" +
                 "                        <p>\n" +
                 "                            Senior blog writer\n" +
@@ -546,7 +552,9 @@
                 $(dom_item.find("h4")[0]).text(v.name)
                 $(dom_item.find("p")[0]).text(v.desc)
                 $(dom_item.find("img")[0]).attr('src', 'img/avatars/' + v.file)
-                $(dom_item.find("a")[0]).attr('href', v.url)
+                if(v.url !== '#'){
+                    $(dom_item.find("a")[0]).attr('href', v.url)
+                }
                 $('#' + v.type).append(dom_item)
             })
         }
