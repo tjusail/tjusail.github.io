@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zxx" class="no-js">
+<head>
+    <!-- Mobile Specific Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="../img/fav.png">
+    <!-- Author Meta -->
+    <meta name="author" content="colorlib">
+    <!-- Meta Description -->
+    <meta name="description" content="">
+    <!-- Meta Keyword -->
+    <meta name="keywords" content="">
+    <!-- meta character set -->
+    <meta charset="UTF-8">
+    <!-- Site Title -->
+    <title>TJU SAIL</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
+    <!--
+    CSS
+    ============================================= -->
+    <link rel="stylesheet" href="../css/linearicons.css">
+    <link rel="stylesheet" href="../css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/magnific-popup.css">
+    <!--    <link rel="stylesheet" href="../css/jquery-ui.css">-->
+    <link rel="stylesheet" href="../css/nice-select.css">
+    <link rel="stylesheet" href="../css/animate.min.css">
+    <link rel="stylesheet" href="../css/owl.carousel.css">
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+<header id="header" class="">
+    <div class="container main-menu">
+        <div class="row align-items-center justify-content-between d-flex">
+            <div class="d-flex">
+                <div id="logo" style="max-width: 80px; border-style: none">
+                    <a href="index.html"><img src="../img/tianjindaxue-logo.jpg" alt="" title=""
+                                              class="img-thumbnail border-0"></a>
+                </div>
+                <div id="logo-1" style="max-width: 91px">
+                    <a href="index.html"><img src="../img/zhisuanxuebu-logo.png" alt="" title=""
+                                              class="img-thumbnail border-0"></a>
+                </div>
+            </div>
+            <nav id="nav-menu-container">
+                <ul class="nav-menu sf-js-enabled sf-arrows" style="touch-action: pan-y;">
+                    <li><a href="../index.html">Home</a></li>
+                </ul>
+            </nav><!-- #nav-menu-container -->
+        </div>
+    </div>
+</header><!-- #header -->
+
+<div id="container">
+    <section class="about-banner">
+        <div class="container">
+            <div class="row d-flex align-items-center justify-content-center">
+                <div class="about-content col-lg-12"><h1 class="text-white">
+                    AutoLock (ASE'20)
+                </h1> <br> <h4 class="text-white">Towards Generating Thread-Safe Classes Automatically.</h4>
+                    </div>
+            </div>
+        </div>
+    </section>
+    <section id="Working-Experience" class="section-gap testimonial-area">
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <div class="menu-content pb-70 col-lg-10">
+                    <div class="title text-center"><h1 class="mb-10">Introduction</h1>
+                        <p></p></div>
+                    <div class="">
+                        <img alt="" class="mb-30 img-fluid" src="../img/projects/autolock.png" style="">
+
+                    </div>
+                    <div>
+                        <div class="text-justify">
+                            <p style="font-size: 16px; line-height: 1.5;">
+                                Concurrent programs are prevalent these days due to the pervasive availability of multi-core and many-core systems. Concurrency bugs are undesirable outcomes that arise when two programs execute concurrently but do not show up if execute sequentially. They are notoriously hard to detect and fix.
+                                <br/><br/>Nowadays, several works have been done on detecting and fixing concurrency bugs, but they do not address the fundamental problem, which is to develop techniques that are capable of preventing concurrency bugs systematically in the first place. A good way to do this is to design a fine-tuned locking policy and implement systematically. There have been multiple attempts on getting programmers to write specifications as locking policy, and yet specifications are scarce in practice.
+                                <br/><br/>In this work, we aim to prevent concurrency bugs by fully automating the process of generating thread-safe classes from sequential programs. That is, given a class which is assumed to be correct in a sequential environment, we automatically generate a thread-safe class, and do it in a way without requiring a specification of the class. Our approach takes three main steps: (1) infer access annotations through static analysis, (2) synthesize a locking policy based on the access annotations, and (3) consistently and automatically implement the locking policy. Furthermore, we optimize the generated class safely (without breaking linearizability) by reducing the scope of locking. For
+                                correctness, we prove that the generated class is linearizable (modulo some assumptions) to the sequential class and is always deadlock-free. Our approach is implemented as a self-contained toolkit called AutoLock for Java programs, and empirically evaluated on a set of 45 benchmark programs (with a total of 64,447 lines).
+                                <br/><br/>This work has been accepted by <a href="https://conf.researchr.org/details/ase-2020/ase-2020-papers/70/Towards-Generating-Thread-Safe-Classes-Automatically">ASE’20</a> .
+                            </p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="Education" class="section-gap home-about-area">
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <div class="menu-content pb-70 col-lg-10">
+                    <div class="title text-center"><h1 class="mb-10">Resources</h1>
+                        <p></p></div>
+                    <div>
+                        <ul class="unordered-list">
+                            <li style="margin-bottom: 10px;"><!----> <b
+                                    style="color: #303030; font-weight: bold;">Tools</b> <!---->
+<!--                                <span style="color: #8490ff; padding-left: 5px;">2004 - 2009</span> &lt;!&ndash;&ndash;&gt;-->
+                                <p style="padding-bottom: 0px; margin-bottom: 0px;"><a href="https://edu.gitee.com/tjuseql/repos/tjuseql/Sip4j/sources">https://edu.gitee.com/tjuseql/repos/tjuseql/Sip4j/sources</a></p> <!----> <p><!----></p></li>
+                            <li style="margin-bottom: 10px;"><!----> <b
+                                    style="color: #303030; font-weight: bold;">Paper</b> <!---->
+                                <!--                                <span style="color: #8490ff; padding-left: 5px;">2004 - 2009</span> &lt;!&ndash;&ndash;&gt;-->
+                                <p style="padding-bottom: 0px; margin-bottom: 0px;"><a class="pdf-area" href="files/ase20.pdf">[pdf]Towards Generating Thread-Safe Classes Automatically.</a></p> <!----> <p><!----></p></li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer-area section-gap">
+        <p class="footer-text text-center">
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script>
+            All rights reserved | This template is made with <i class="fa fa-heart-o"
+                                                                aria-hidden="true"></i> by <a
+                href="https://colorlib.com" target="_blank">Colorlib</a>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+
+    </footer>
+</div>
+
+
+<script src="../js/vendor/jquery-2.2.4.min.js"></script>
+<script src="../js/popper.min.js"></script>
+<script src="../js/vendor/bootstrap.min.js"></script>
+<!--    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>-->
+<script src="../js/easing.min.js"></script>
+<script src="../js/hoverIntent.js"></script>
+<script src="../js/superfish.min.js"></script>
+<script src="../js/jquery.ajaxchimp.min.js"></script>
+<script src="../js/jquery.magnific-popup.min.js"></script>
+<script src="../js/jquery.tabs.min.js"></script>
+<script src="../js/jquery.nice-select.min.js"></script>
+<script src="../js/isotope.pkgd.min.js"></script>
+<script src="../js/waypoints.min.js"></script>
+<script src="../js/jquery.counterup.min.js"></script>
+<script src="../js/simple-skillbar.js"></script>
+<script src="../js/owl.carousel.min.js"></script>
+<script src="../js/mail-script.js"></script>
+<script src="../js/main.js"></script>
+
+
+
+</body>
+</html>
